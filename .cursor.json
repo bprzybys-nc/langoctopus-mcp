@@ -1,0 +1,40 @@
+{
+  "name": "LangGraph Agent with MCP Tools",
+  "description": "Minimalist, robust agentic workflow using LangGraph and MCP for a conversational agent using Gemini 2.5 Flash",
+  "features": {
+    "lsp": true,
+    "formatter": true,
+    "shellExecution": {
+      "primary": "fish",
+      "fallback": "zsh",
+      "packageManager": "python -m pip"
+    }
+  },
+  "languageServers": {
+    "python": {
+      "enabled": true
+    }
+  },
+  "formatting": {
+    "python": {
+      "formatter": "black",
+      "formatOnSave": true
+    }
+  },
+  "linting": {
+    "enabled": true,
+    "python": {
+      "linter": "pylint",
+      "lintOnSave": true
+    }
+  },
+  "rulesDirectory": ".cursor",
+  "shellScripts": {
+    "interpreter": "/usr/bin/env fish",
+    "fallbackInterpreter": "/bin/zsh",
+    "errorHandling": {
+      "retryOnError": true,
+      "maxRetries": 1
+    }
+  }
+} 

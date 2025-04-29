@@ -1,0 +1,21 @@
+# Build and cache
+__pycache__/
+build/
+dist/
+*.egg-info/
+
+# Environment and secrets
+.env
+.venv/
+env/
+venv/
+
+# Large files and data
+data/large/
+*.zip
+*.tar.gz
+
+# Logs and temporary files
+logs/
+tmp/
+.cursor/logs/ 

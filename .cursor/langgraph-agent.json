@@ -1,0 +1,32 @@
+{
+  "name": "LangGraph Agent Implementation",
+  "description": "Rules for implementing the LangGraph agent with Gemini 2.5 Flash",
+  "rules": [
+    {
+      "description": "Load environment variables with dotenv",
+      "pattern": "load_dotenv()",
+      "files": ["client.py"]
+    },
+    {
+      "description": "Gemini model configuration",
+      "pattern": "ChatGoogleGenerativeAI\\(\\s*model=\"gemini-2.5-flash\"",
+      "files": ["client.py"]
+    },
+    {
+      "description": "Multi-server client setup for MCP tools",
+      "pattern": "MultiServerMCPClient",
+      "files": ["client.py"]
+    },
+    {
+      "description": "Use ReAct agent pattern",
+      "pattern": "create_react_agent",
+      "files": ["client.py"]
+    }
+  ],
+  "examples": {
+    "create_agent": {
+      "description": "Template for creating a basic LangGraph agent",
+      "code": "from langgraph.prebuilt import create_react_agent\nfrom langchain_mcp_adapters.client import MultiServerMCPClient\nfrom langchain_google_genai import ChatGoogleGenerativeAI\n\nmodel = ChatGoogleGenerativeAI(model=\"gemini-2.5-flash\", google_api_key=api_key)\nasync with MultiServerMCPClient(servers_config) as client:\n    tools = client.get_tools()\n    agent = create_react_agent(model, tools)"
+    }
+  }
+} 

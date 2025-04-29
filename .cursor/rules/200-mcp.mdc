@@ -1,0 +1,57 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# MCP Server Rules
+
+## Context
+- Rules for implementing and managing MCP servers
+- Covers both math and weather servers
+- Handles server lifecycle management
+
+## Requirements
+- Each server must have a unique name
+- All tool functions must be typed and documented
+- Proper server transport configuration
+- Clean server shutdown handling
+
+## Server Implementation
+```python
+from mcp.server.fastmcp import FastMCP
+
+mcp = FastMCP("UniqueName")
+
+@mcp.tool()
+def example_tool(param: str) -> str:
+    """Tool description"""
+    return result
+```
+
+## Examples
+<example>
+# Good: Properly configured MCP server
+from mcp.server.fastmcp import FastMCP
+
+mcp = FastMCP("Math")
+
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers"""
+    return a + b
+
+if __name__ == "__main__":
+    mcp.run(transport="stdio")
+</example>
+
+<example type="invalid">
+# Bad: Missing type hints
+@mcp.tool()
+def add(a, b):
+    return a + b
+
+# Bad: No docstring
+@mcp.tool()
+def multiply(a: int, b: int) -> int:
+    return a * b
+</example>

@@ -1,0 +1,42 @@
+{
+  "name": "Shell Execution",
+  "description": "Rules for shell script execution and package management",
+  "rules": [
+    {
+      "description": "Use pip for Python package management",
+      "pattern": "pip (install|uninstall|freeze)",
+      "replacement": "python -m pip $1",
+      "files": ["*.sh", "run.py"]
+    },
+    {
+      "description": "Shell script execution with fallback",
+      "pattern": "subprocess\\.Popen\\(\\[\".*\\.sh\"\\]",
+      "replacement": "subprocess.Popen([\"fish\", \"$SCRIPT\"], shell=True, env={**os.environ, \"SHELL\": \"/usr/bin/fish\"}, stderr=subprocess.PIPE)",
+      "files": ["*.py"]
+    }
+  ],
+  "shellFallback": {
+    "primary": "fish",
+    "fallback": "zsh",
+    "errorPattern": "fish: Unknown command|command not found",
+    "retryTemplate": "#!/usr/bin/env zsh\n# Fallback execution\nset -e\n$ORIGINAL_SCRIPT"
+  },
+  "packageManagement": {
+    "python": {
+      "install": "python -m pip install",
+      "uninstall": "python -m pip uninstall",
+      "freeze": "python -m pip freeze",
+      "list": "python -m pip list"
+    }
+  },
+  "examples": {
+    "install_packages": {
+      "description": "Template for installing Python packages",
+      "code": "python -m pip install -r requirements.txt"
+    },
+    "shell_script": {
+      "description": "Template for shell script with fallback",
+      "code": "#!/usr/bin/env fish\nset -e\n\n# Original commands here\n\n# Fallback handler\nif test $status -ne 0\n    exec zsh $0 \"$argv\"\nend"
+    }
+  }
+} 

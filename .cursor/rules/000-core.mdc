@@ -1,0 +1,37 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Core Project Rules
+
+## Context
+- Base configuration for the LangGraph Agent project
+- Applies to all files unless overridden by more specific rules
+
+## Requirements
+- Use Python best practices
+- Follow minimalistic design principles
+- Maintain clean code structure
+
+## Package Management
+- Always use `python -m pip` for package operations
+- Keep dependencies minimal and versioned
+- Use requirements.txt for dependency management
+
+## Examples
+<example>
+# Good: Using python -m pip
+python -m pip install -r requirements.txt
+
+# Good: Versioned dependencies
+langchain-mcp-adapters==0.0.6
+</example>
+
+<example type="invalid">
+# Bad: Direct pip usage
+pip install package_name
+
+# Bad: Unversioned dependencies
+langchain-mcp-adapters
+</example>

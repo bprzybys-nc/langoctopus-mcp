@@ -1,0 +1,32 @@
+{
+  "name": "MCP Server Implementation",
+  "description": "Rules for implementing MCP servers with FastMCP",
+  "rules": [
+    {
+      "description": "Each MCP server must have a unique name",
+      "pattern": "mcp = FastMCP(\"[^\"]+\")",
+      "files": ["*_server.py"]
+    },
+    {
+      "description": "Each tool function must have a docstring",
+      "pattern": "@mcp\\.tool\\(\\)\\s+def\\s+\\w+\\([^)]*\\)\\s*->\\s*\\w+:\\s*\\\"\\\"\\\"",
+      "files": ["*_server.py"]
+    },
+    {
+      "description": "Tool functions should be typed",
+      "pattern": "def\\s+\\w+\\([^)]*\\)\\s*->\\s*\\w+:",
+      "files": ["*_server.py"]
+    },
+    {
+      "description": "Server transport must be specified",
+      "pattern": "mcp\\.run\\(transport=\"(stdio|sse)\"",
+      "files": ["*_server.py"]
+    }
+  ],
+  "examples": {
+    "create_basic_mcp_server": {
+      "description": "Basic MCP server template",
+      "code": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"ServerName\")\n\n@mcp.tool()\ndef example_tool(param: str) -> str:\n    \"\"\"Tool description\"\"\"\n    return f\"Processed {param}\"\n\nif __name__ == \"__main__\":\n    mcp.run(transport=\"stdio\")"
+    }
+  }
+} 

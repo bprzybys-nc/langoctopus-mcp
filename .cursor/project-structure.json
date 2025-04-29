@@ -1,0 +1,39 @@
+{
+  "name": "Project Structure",
+  "description": "Defines the core structure of the LangGraph MCP agent project",
+  "pattern": [
+    {
+      "file": "math_server.py",
+      "description": "MCP server for math operations"
+    },
+    {
+      "file": "weather_server.py",
+      "description": "MCP server for weather information"
+    },
+    {
+      "file": "client.py",
+      "description": "LangGraph agent implementation with Gemini 2.5 Flash"
+    },
+    {
+      "file": "run.py",
+      "description": "Script to orchestrate starting servers and running the agent"
+    },
+    {
+      "file": "test_queries.py",
+      "description": "Test script with example agent queries"
+    },
+    {
+      "file": "requirements.txt",
+      "description": "Project dependencies"
+    },
+    {
+      "file": "README.md",
+      "description": "Project documentation"
+    },
+    {
+      "file": ".env",
+      "description": "Environment variables for API keys",
+      "excluded": true
+    }
+  ]
+} 

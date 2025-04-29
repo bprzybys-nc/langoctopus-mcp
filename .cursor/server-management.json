@@ -1,0 +1,37 @@
+{
+  "name": "Server Management",
+  "description": "Rules for managing MCP servers in the run script",
+  "rules": [
+    {
+      "description": "Start servers with subprocess.Popen",
+      "pattern": "subprocess\\.Popen\\(\\[\"\\.?\\.?/?\\w+\\.py\"\\]",
+      "files": ["run.py"]
+    },
+    {
+      "description": "Wait for servers to initialize",
+      "pattern": "(time\\.sleep|asyncio\\.sleep)\\((\\d+)\\)",
+      "files": ["run.py"]
+    },
+    {
+      "description": "Implement clean shutdown",
+      "pattern": "cleanup\\(",
+      "files": ["run.py"]
+    },
+    {
+      "description": "Handle signal interrupts",
+      "pattern": "signal\\.signal\\(signal\\.SIG(INT|TERM)",
+      "files": ["run.py"]
+    },
+    {
+      "description": "Shell environment setup",
+      "pattern": "env=\\{\\*\\*os\\.environ",
+      "files": ["run.py"]
+    }
+  ],
+  "examples": {
+    "server_management": {
+      "description": "Template for starting and managing MCP servers",
+      "code": "import subprocess\nimport signal\nimport sys\nimport time\nimport os\n\nserver_processes = []\n\ndef start_servers():\n    env = {**os.environ, \"SHELL\": \"/usr/bin/fish\"}\n    try:\n        process = subprocess.Popen([\"python\", \"server.py\"], env=env)\n        server_processes.append(process)\n    except Exception as e:\n        # Fallback to zsh if fish fails\n        env[\"SHELL\"] = \"/bin/zsh\"\n        process = subprocess.Popen([\"python\", \"server.py\"], env=env)\n        server_processes.append(process)\n    time.sleep(2)  # Wait for initialization\n\ndef cleanup():\n    for process in server_processes:\n        process.terminate()\n    sys.exit(0)\n\nsignal.signal(signal.SIGINT, cleanup)\nsignal.signal(signal.SIGTERM, cleanup)"
+    }
+  }
+} 

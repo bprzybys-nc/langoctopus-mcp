@@ -1,0 +1,47 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Shell Execution Rules
+
+## Context
+- Rules for shell script execution and process management
+- Handles shell fallback mechanism (fish → zsh)
+- Applies to Python scripts and shell scripts
+
+## Requirements
+- Use fish as primary shell
+- Fallback to zsh on fish failures
+- Proper process cleanup on exit
+- Handle signals appropriately
+
+## Shell Configuration
+```python
+env = {**os.environ, "SHELL": "/usr/bin/fish"}
+try:
+    process = subprocess.Popen(cmd, env=env)
+except Exception:
+    env["SHELL"] = "/bin/zsh"
+    process = subprocess.Popen(cmd, env=env)
+```
+
+## Examples
+<example>
+# Good: Shell execution with fallback
+def run_command(cmd):
+    env = {**os.environ, "SHELL": "/usr/bin/fish"}
+    try:
+        return subprocess.Popen(cmd, env=env)
+    except:
+        env["SHELL"] = "/bin/zsh"
+        return subprocess.Popen(cmd, env=env)
+</example>
+
+<example type="invalid">
+# Bad: No shell fallback
+subprocess.Popen(cmd)
+
+# Bad: Hard-coded shell
+subprocess.Popen(cmd, shell="/bin/bash")
+</example>
