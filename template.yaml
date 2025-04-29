@@ -1,0 +1,67 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  MCP Lambda API Gateway Template
+  
+Resources:
+  # API Gateway with no authentication
+  McpApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: dev
+      # No auth configured - as per requirements
+      Auth:
+        DefaultAuthorizer: NONE
+  
+  # Math Lambda function
+  MathFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/math/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Architectures:
+        - x86_64
+      Events:
+        MathAPI:
+          Type: Api
+          Properties:
+            RestApiId: !Ref McpApi
+            Path: /math
+            Method: post
+      Environment:
+        Variables:
+          LOG_LEVEL: INFO
+
+  # Weather Lambda function
+  WeatherFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/weather/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Architectures:
+        - x86_64
+      Events:
+        WeatherAPI:
+          Type: Api
+          Properties:
+            RestApiId: !Ref McpApi
+            Path: /weather
+            Method: post
+      Environment:
+        Variables:
+          LOG_LEVEL: INFO
+
+Outputs:
+  McpApi:
+    Description: "API Gateway endpoint URL"
+    Value: !Sub "https://${McpApi}.execute-api.${AWS::Region}.amazonaws.com/dev/"
+  
+  MathFunction:
+    Description: "Math Lambda Function ARN"
+    Value: !GetAtt MathFunction.Arn
+  
+  WeatherFunction:
+    Description: "Weather Lambda Function ARN"
+    Value: !GetAtt WeatherFunction.Arn 

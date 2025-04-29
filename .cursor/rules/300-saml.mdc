@@ -1,0 +1,81 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# SAML Authentication Rules
+
+## Context
+- Rules for implementing SAML authentication with AWS Lambda and API Gateway
+- Guidelines for secure Identity Provider (IdP) integration
+- Covers local development and deployment patterns
+
+## Requirements
+- Follow AWS best practices for SAML integration
+- Properly handle SAML assertions and responses
+- Maintain secure token validation
+- Support local development without authentication when specified
+
+## Lambda SAML Configuration
+```python
+# Example of configuring a Lambda authorizer for SAML
+def lambda_handler(event, context):
+    # For development with no auth as specified
+    if os.environ.get('NOAUTH') == 'true':
+        return {
+            'isAuthorized': True,
+            'context': {
+                'user': 'development-user',
+                'roles': 'development'
+            }
+        }
+    
+    # In production, validate SAML tokens
+    try:
+        # Extract token from request
+        token = event['headers'].get('Authorization', '').replace('Bearer ', '')
+        
+        # Validate SAML assertion
+        # ... validation code ...
+        
+        return {
+            'isAuthorized': True,
+            'context': {
+                'user': validated_user,
+                'roles': user_roles
+            }
+        }
+    except Exception as e:
+        return {'isAuthorized': False}
+```
+
+## Examples
+<example>
+# Good: Properly configured API Gateway with Lambda authorizer
+Resources:
+  McpApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: dev
+      Auth:
+        DefaultAuthorizer: NONE  # For no-auth development mode
+        
+  # Add this back when ready for authentication
+  # SamlAuthorizer:
+  #  Type: AWS::Serverless::Function
+  #  Properties:
+  #    Handler: app.lambda_handler
+  #    Runtime: python3.9
+  #    CodeUri: ./lambda/authorizer/
+</example>
+
+<example type="invalid">
+# Bad: Hardcoded credentials
+def validate_saml(assertion):
+    saml_client = boto3.client(
+        'cognito-idp',
+        aws_access_key_id='AKIAIOSFODNN7EXAMPLE',
+        aws_secret_access_key='wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
+    )
+    return saml_client.respond_to_auth_challenge(...)
+</example>

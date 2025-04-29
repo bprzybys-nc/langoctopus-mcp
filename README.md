@@ -28,6 +28,30 @@ This will:
 
 Type `exit` to quit.
 
+## Lambda Implementation
+
+The project now includes an AWS Lambda implementation of the MCP services:
+
+- Math and Weather services as Lambda functions
+- API Gateway for accessing the Lambda functions
+- No authentication required (as per requirements)
+
+### Running Lambda Implementation Locally
+
+Run the local Lambda environment with:
+```bash
+python run_lambda_local.py
+```
+
+This will start the SAM local API on port 3000 and test the endpoints.
+
+In another terminal, run the Lambda-compatible client:
+```bash
+python lambda_client.py
+```
+
+See `lambda/README.md` for more details.
+
 ## Testing
 
 Run automated tests with:

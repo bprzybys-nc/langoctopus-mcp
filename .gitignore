@@ -36,4 +36,19 @@ ENV/
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# AWS SAM
+.aws-sam/
+samconfig.toml
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local testing
+.coverage
+htmlcov/ 
