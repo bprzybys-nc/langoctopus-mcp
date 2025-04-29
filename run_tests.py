@@ -19,12 +19,18 @@ def run_tests(pattern):
     """
     logger.info(f"Running tests in tests/lambda matching {pattern}...")
     
-    # Reset sys.modules to make sure we get fresh module imports
-    for mod in list(sys.modules.keys()):
-        if mod.startswith('app'):
-            logger.debug(f"Removing module {mod} from sys.modules")
-            del sys.modules[mod]
+    # Reset sys.modules
+    modules_to_remove = []
+    for mod in sys.modules.keys():
+        if mod.startswith('app') or mod.startswith('lambda.') or mod.startswith('tests.lambda.'):
+            modules_to_remove.append(mod)
     
+    # # Commented out the generic removal for now to rely on specific reload/clear
+    # for mod in modules_to_remove:
+    #     logger.debug(f"Removing module {mod} from sys.modules")
+    #     if mod in sys.modules: # Check if it exists before deleting
+    #         del sys.modules[mod]
+
     # Add all lambda directories to path
     project_root = os.path.dirname(os.path.abspath(__file__))
     lambda_dirs = [
@@ -38,38 +44,26 @@ def run_tests(pattern):
             logger.debug(f"Adding {lambda_dir} to sys.path")
             sys.path.insert(0, lambda_dir)
     
-    # Running individual tests works, so let's do that instead of using the test runner
-    if pattern == 'test_weather_*.py':
-        logger.info("Running weather tests directly")
-        # Import the test module
-        test_module = importlib.import_module('tests.lambda.test_weather_lambda')
-        # Run the tests
-        result = unittest.TextTestRunner(verbosity=1).run(
-            unittest.defaultTestLoader.loadTestsFromModule(test_module)
-        )
-        return result.wasSuccessful()
-    elif pattern == 'test_math_*.py':
-        logger.info("Running math tests directly")
-        # Import the test module
-        test_module = importlib.import_module('tests.lambda.test_math_lambda')
-        # Run the tests
-        result = unittest.TextTestRunner(verbosity=1).run(
-            unittest.defaultTestLoader.loadTestsFromModule(test_module)
-        )
-        return result.wasSuccessful()
-    else:
-        # Discover and run tests
-        loader = unittest.TestLoader()
-        suite = loader.discover('tests/lambda', pattern=pattern)
-        runner = unittest.TextTestRunner(verbosity=1)
-        result = runner.run(suite)
-        
-        if not result.wasSuccessful():
-            logger.error("Some tests failed")
-            return False
-        
-        logger.info("All tests passed!")
-        return True
+    # Discover and run tests using discover consistently
+    loader = unittest.TestLoader()
+    suite = loader.discover('tests/lambda', pattern=pattern)
+    runner = unittest.TextTestRunner(verbosity=2)
+    result = runner.run(suite)
+    
+    if not result.wasSuccessful():
+        logger.error(f"Some tests matching '{pattern}' failed")
+        return False
+    
+    logger.info(f"All tests matching '{pattern}' passed!")
+    return True
+
+def clear_math_module():
+    """Specifically removes the math lambda module from cache."""
+    modules_to_clear = ['lambda.math.app', 'app'] # Also clear plain 'app'
+    for module_name in modules_to_clear:
+        if module_name in sys.modules:
+            logger.debug(f"Specifically removing module {module_name} from sys.modules")
+            del sys.modules[module_name]
 
 def main():
     """
@@ -83,14 +77,48 @@ def main():
     
     args = parser.parse_args()
     
+    # Ensure lambda path is added early
+    project_root = os.path.dirname(os.path.abspath(__file__))
+    math_lambda_path = os.path.join(project_root, 'lambda', 'math')
+    if math_lambda_path not in sys.path:
+        logger.debug(f"Adding {math_lambda_path} to sys.path for main")
+        sys.path.insert(0, math_lambda_path)
+
     if args.math:
+        clear_math_module()
+        # Explicitly reload app before running math tests
+        try:
+            import app # Ensure app is loaded if not already
+            importlib.reload(app)
+            logger.info("Reloaded 'app' module for math tests.")
+        except ImportError:
+            logger.error("Could not import 'app' to reload for math tests.")
+        except KeyError:
+            logger.warning("'app' module not in sys.modules, cannot reload.") # Should not happen if imported
         return 0 if run_tests('test_math_*.py') else 1
     elif args.weather:
+        # Clear math module even when running only weather tests, just in case
+        clear_math_module()
         return 0 if run_tests('test_weather_*.py') else 1
     elif args.all:
         success = True
+        clear_math_module()
+        # Explicitly reload app before running math tests
+        try:
+            import app # Ensure app is loaded if not already
+            importlib.reload(app)
+            logger.info("Reloaded 'app' module for math tests run in --all.")
+        except ImportError:
+            logger.error("Could not import 'app' to reload for math tests.")
+        except KeyError:
+            logger.warning("'app' module not in sys.modules, cannot reload.") # Should not happen if imported
+            
         if not run_tests('test_math_*.py'):
             success = False
+            
+        # Clear math module again before weather tests, just to be safe
+        clear_math_module() 
+        
         if not run_tests('test_weather_*.py'):
             success = False
         return 0 if success else 1

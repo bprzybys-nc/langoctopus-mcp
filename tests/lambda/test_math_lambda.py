@@ -3,9 +3,6 @@ import unittest
 import sys
 import os
 
-# Add lambda directory to path for imports
-sys.path.append(os.path.join(os.path.dirname(__file__), '../../lambda/math'))
-
 from app import lambda_handler
 
 class TestMathLambda(unittest.TestCase):
@@ -13,6 +10,7 @@ class TestMathLambda(unittest.TestCase):
     
     def test_add_operation(self):
         """Test add operation."""
+        context = {}
         event = {
             'operation': 'add',
             'parameters': {
@@ -20,7 +18,6 @@ class TestMathLambda(unittest.TestCase):
                 'b': 7
             }
         }
-        context = {}
         response = lambda_handler(event, context)
         
         self.assertEqual(response['statusCode'], 200)
@@ -29,6 +26,7 @@ class TestMathLambda(unittest.TestCase):
     
     def test_multiply_operation(self):
         """Test multiply operation."""
+        context = {}
         event = {
             'operation': 'multiply',
             'parameters': {
@@ -36,7 +34,6 @@ class TestMathLambda(unittest.TestCase):
                 'b': 7
             }
         }
-        context = {}
         response = lambda_handler(event, context)
         
         self.assertEqual(response['statusCode'], 200)
@@ -45,6 +42,7 @@ class TestMathLambda(unittest.TestCase):
     
     def test_subtract_operation(self):
         """Test subtract operation."""
+        context = {}
         event = {
             'operation': 'subtract',
             'parameters': {
@@ -52,7 +50,6 @@ class TestMathLambda(unittest.TestCase):
                 'b': 3
             }
         }
-        context = {}
         response = lambda_handler(event, context)
         
         self.assertEqual(response['statusCode'], 200)
@@ -61,6 +58,7 @@ class TestMathLambda(unittest.TestCase):
     
     def test_divide_operation(self):
         """Test divide operation."""
+        context = {}
         event = {
             'operation': 'divide',
             'parameters': {
@@ -68,7 +66,6 @@ class TestMathLambda(unittest.TestCase):
                 'b': 2
             }
         }
-        context = {}
         response = lambda_handler(event, context)
         
         self.assertEqual(response['statusCode'], 200)
@@ -77,6 +74,7 @@ class TestMathLambda(unittest.TestCase):
     
     def test_divide_by_zero(self):
         """Test divide by zero error handling."""
+        context = {}
         event = {
             'operation': 'divide',
             'parameters': {
@@ -84,7 +82,6 @@ class TestMathLambda(unittest.TestCase):
                 'b': 0
             }
         }
-        context = {}
         response = lambda_handler(event, context)
         
         self.assertEqual(response['statusCode'], 400)
@@ -93,6 +90,7 @@ class TestMathLambda(unittest.TestCase):
     
     def test_invalid_operation(self):
         """Test invalid operation error handling."""
+        context = {}
         event = {
             'operation': 'invalid_op',
             'parameters': {
@@ -100,7 +98,6 @@ class TestMathLambda(unittest.TestCase):
                 'b': 5
             }
         }
-        context = {}
         response = lambda_handler(event, context)
         
         self.assertEqual(response['statusCode'], 400)
@@ -109,13 +106,13 @@ class TestMathLambda(unittest.TestCase):
     
     def test_missing_operation(self):
         """Test missing operation error handling."""
+        context = {}
         event = {
             'parameters': {
                 'a': 10,
                 'b': 5
             }
         }
-        context = {}
         response = lambda_handler(event, context)
         
         self.assertEqual(response['statusCode'], 400)
@@ -124,6 +121,7 @@ class TestMathLambda(unittest.TestCase):
     
     def test_api_gateway_invocation(self):
         """Test invocation through API Gateway."""
+        context = {}
         event = {
             'body': json.dumps({
                 'operation': 'add',
@@ -133,7 +131,6 @@ class TestMathLambda(unittest.TestCase):
                 }
             })
         }
-        context = {}
         response = lambda_handler(event, context)
         
         self.assertEqual(response['statusCode'], 200)

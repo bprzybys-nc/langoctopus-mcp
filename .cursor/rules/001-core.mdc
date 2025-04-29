@@ -1,6 +1,6 @@
 ---
-description:
-globs:
+description: 
+globs: 
 alwaysApply: false
 ---
 # Core Project Rules
@@ -24,8 +24,14 @@ alwaysApply: false
 # Good: Using python -m pip
 python -m pip install -r requirements.txt
 
-# Good: Versioned dependencies
+# Think: Versioned dependencies
 langchain-mcp-adapters==0.0.6
+<why="if all packages together are stable"/>
+</example>
+
+# Think Unversioned dependencies
+langchain-mcp-adapters
+<why="if you unsure what setup is stable"/>
 </example>
 
 <example type="invalid">
