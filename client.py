@@ -34,7 +34,23 @@ async def main(user_query=None):
         if user_query:
             # For programmatic use or testing
             response = await agent.ainvoke({"messages": [{"role": "user", "content": user_query}]})
-            return response['messages'][-1]['content']
+            
+            # Get the last message, which should contain the final response
+            if response and isinstance(response, dict) and 'messages' in response and isinstance(response['messages'], list) and len(response['messages']) > 0:
+                last_message = response['messages'][-1]
+                
+                # Extract content based on whether it's an AIMessage or dict
+                if hasattr(last_message, 'content'):
+                    return last_message.content # Handle AIMessage
+                elif isinstance(last_message, dict) and 'content' in last_message:
+                     return last_message['content'] # Handle dict message
+                else:
+                    print(f"Error: Could not extract content from last message. Type: {type(last_message)}, Value: {last_message}")
+                    return "Error: Could not parse final message content."
+            else:
+                 # If the structure is unexpected (e.g., not a dict, no 'messages' key)
+                 print(f"Error: Unexpected agent response structure: {type(response)} - {response}")
+                 return "Error: Could not parse agent response structure."
         else:
             # Interactive mode
             print("Agent ready! Type 'exit' to quit.")
@@ -44,7 +60,7 @@ async def main(user_query=None):
                     break
                 try:
                     response = await agent.ainvoke({"messages": [{"role": "user", "content": query}]})
-                    print(f"\nAgent: {response['messages'][-1]['content']}")
+                    print(f"\nAgent: {response.content}")
                 except Exception as e:
                     print(f"\nError: {e}")
 

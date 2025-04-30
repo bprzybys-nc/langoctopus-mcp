@@ -32,4 +32,4 @@ def get_forecast(location: str, days: int = 3) -> str:
     return f"{days}-day forecast for {location}: Expect mild temperatures around 20-25°C with {pattern}."
 
 if __name__ == "__main__":
-    mcp.run(transport="sse", port=8000) 
+    mcp.run(transport="sse") 

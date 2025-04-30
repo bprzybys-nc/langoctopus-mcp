@@ -1,0 +1,1015 @@
+[04/30/25 11:35:38] DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+[04/30/25 11:35:38] DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+[04/30/25 11:35:38] DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x1084b5b90>                                                      
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x1209ece10>                                                      
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x11460cd50>                                                      
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+[04/30/25 11:35:38] DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x105623510>                                                      
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+[04/30/25 11:35:38] DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+[04/30/25 11:35:38] DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x1121c4810>                                                      
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x104598bd0>                                                      
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Response sent                                        server.py:574
+2025-04-30 11:35:38,181 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,200 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,209 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,221 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,223 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=fb6ba17a7ad1447c9f97751d1fac6797
+2025-04-30 11:35:38,223 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=fb6ba17a7ad1447c9f97751d1fac6797
+2025-04-30 11:35:38,226 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x10510d850>                                                      
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x105355210>                                                      
+                    DEBUG    Response sent                                        server.py:574
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,345 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,371 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,385 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,385 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,386 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,387 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x122de7710>                                                      
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x104c0e110>                                                      
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x106698f10>                                                      
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+2025-04-30 11:35:38,405 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=8923b3faf1fa4c99aa833fe1e9524f2f
+2025-04-30 11:35:38,405 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=7b1c59b5afe54a0d89e85e43ff0884e1
+2025-04-30 11:35:38,406 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=497314c7c9d549d8b83269c8c0579df6
+2025-04-30 11:35:38,407 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=4af68601320a48ff9aa29215042aaea1
+2025-04-30 11:35:38,408 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=8923b3faf1fa4c99aa833fe1e9524f2f
+2025-04-30 11:35:38,409 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=7b1c59b5afe54a0d89e85e43ff0884e1
+2025-04-30 11:35:38,409 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=497314c7c9d549d8b83269c8c0579df6
+2025-04-30 11:35:38,409 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=4af68601320a48ff9aa29215042aaea1
+2025-04-30 11:35:38,410 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x1074da250>                                                      
+2025-04-30 11:35:38,410 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+2025-04-30 11:35:38,413 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=b8e6e95302ed4e4e99100feeff1897d2
+2025-04-30 11:35:38,413 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=ca906bcd620d4bc48c1baf5c304ed993
+2025-04-30 11:35:38,414 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,426 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,439 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=b8e6e95302ed4e4e99100feeff1897d2
+2025-04-30 11:35:38,439 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=ca906bcd620d4bc48c1baf5c304ed993
+2025-04-30 11:35:38,440 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,440 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,442 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=8f1b2412a1e8426d972074c8e24337c8
+2025-04-30 11:35:38,442 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=c3eb0740bb7444f79811173ff1281732
+2025-04-30 11:35:38,444 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x107723990>                                                      
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x10759ad10>                                                      
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,452 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x104ab2890>                                                      
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+2025-04-30 11:35:38,459 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,472 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=8f1b2412a1e8426d972074c8e24337c8
+2025-04-30 11:35:38,472 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=c3eb0740bb7444f79811173ff1281732
+2025-04-30 11:35:38,475 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,476 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=785cd19a4a804e94a25c0abb2183c7bb
+2025-04-30 11:35:38,478 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,489 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=785cd19a4a804e94a25c0abb2183c7bb
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+2025-04-30 11:35:38,499 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x110d93650>                                                      
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,514 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,527 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,539 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,542 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=dc81cea7d3e64c659a1bfdb8af942de7
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+2025-04-30 11:35:38,543 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,544 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=dc81cea7d3e64c659a1bfdb8af942de7
+2025-04-30 11:35:38,544 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=d641808fb7c8416789e641f6b5a6791c
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+2025-04-30 11:35:38,545 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=d641808fb7c8416789e641f6b5a6791c
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x107f6b710>                                                      
+2025-04-30 11:35:38,547 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x107c6d1d0>                                                      
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x121cc7710>                                                      
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+2025-04-30 11:35:38,558 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,558 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+fb6ba17a7ad1447c9f97751d1fac6797 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,559 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,559 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x110a99e90>                                                      
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,566 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+8923b3faf1fa4c99aa833fe1e9524f2f "HTTP/1.1 202 Accepted"
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+2025-04-30 11:35:38,568 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x1034df4d0>                                                      
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x1054d1c90>                                                      
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+2025-04-30 11:35:38,577 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,584 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,592 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+7b1c59b5afe54a0d89e85e43ff0884e1 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,593 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+497314c7c9d549d8b83269c8c0579df6 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,593 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+4af68601320a48ff9aa29215042aaea1 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,594 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=169e5dcf91e041b3b244d6d6f5246750
+2025-04-30 11:35:38,594 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=4b6abf8d85af40918736e83af8789c9a
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+2025-04-30 11:35:38,594 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=56c29dc8a66e410f8472cf8fbf5ed6be
+2025-04-30 11:35:38,595 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+b8e6e95302ed4e4e99100feeff1897d2 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,596 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=169e5dcf91e041b3b244d6d6f5246750
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x10513b050>                                                      
+2025-04-30 11:35:38,597 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=4b6abf8d85af40918736e83af8789c9a
+2025-04-30 11:35:38,597 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=56c29dc8a66e410f8472cf8fbf5ed6be
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+2025-04-30 11:35:38,598 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+ca906bcd620d4bc48c1baf5c304ed993 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,598 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+                    DEBUG    Response sent                                        server.py:574
+2025-04-30 11:35:38,599 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+[04/30/25 11:35:38] DEBUG    Using selector: KqueueSelector               selector_events.py:54
+2025-04-30 11:35:38,600 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,607 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,613 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,622 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+8f1b2412a1e8426d972074c8e24337c8 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,622 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+c3eb0740bb7444f79811173ff1281732 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,622 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=e808543df1e84605a5dab032125cfc3d
+2025-04-30 11:35:38,622 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=ea6e149abb9d4ab5a397d33a35b244b4
+2025-04-30 11:35:38,622 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+2025-04-30 11:35:38,623 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+2025-04-30 11:35:38,624 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=e808543df1e84605a5dab032125cfc3d
+2025-04-30 11:35:38,624 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=ea6e149abb9d4ab5a397d33a35b244b4
+2025-04-30 11:35:38,624 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,625 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x105efb850>                                                      
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x103cd0f90>                                                      
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x110ed0f90>                                                      
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+2025-04-30 11:35:38,625 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x10760ebd0>                                                      
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Response sent                                        server.py:574
+2025-04-30 11:35:38,640 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+785cd19a4a804e94a25c0abb2183c7bb "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,644 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+                    DEBUG    Received message:                                    server.py:494
+                             root=InitializedNotification(method='notifications/i              
+                             nitialized', params=None, jsonrpc='2.0')                          
+                    DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x107bd1c90>                                                      
+                    INFO     Processing request of type ListToolsRequest          server.py:536
+                    DEBUG    Dispatching request of type ListToolsRequest         server.py:539
+                    DEBUG    Response sent                                        server.py:574
+2025-04-30 11:35:38,651 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,658 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,665 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,674 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=47eebce5ad8b4739a0997bf93b658557
+2025-04-30 11:35:38,674 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=b5829d63f1104bb387a60025ee0f4ae3
+2025-04-30 11:35:38,674 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=6983ce36f6ff4cf7ad3beddd0d6f4a23
+2025-04-30 11:35:38,674 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=5f88252a276946b6a4f72adc3e7984c9
+2025-04-30 11:35:38,674 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,675 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,675 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,675 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+dc81cea7d3e64c659a1bfdb8af942de7 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,675 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+d641808fb7c8416789e641f6b5a6791c "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,675 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+fb6ba17a7ad1447c9f97751d1fac6797 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,676 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,676 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=47eebce5ad8b4739a0997bf93b658557
+2025-04-30 11:35:38,676 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=b5829d63f1104bb387a60025ee0f4ae3
+2025-04-30 11:35:38,676 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=6983ce36f6ff4cf7ad3beddd0d6f4a23
+2025-04-30 11:35:38,676 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=5f88252a276946b6a4f72adc3e7984c9
+2025-04-30 11:35:38,677 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=772696847dae490f95ae1fb585595b15
+2025-04-30 11:35:38,677 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=08ef602df6524975a3e46c92cfacff50
+2025-04-30 11:35:38,677 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=61e207fed94c495fbc61761b7b8abd16
+2025-04-30 11:35:38,678 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=772696847dae490f95ae1fb585595b15
+2025-04-30 11:35:38,680 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=08ef602df6524975a3e46c92cfacff50
+2025-04-30 11:35:38,680 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=61e207fed94c495fbc61761b7b8abd16
+2025-04-30 11:35:38,682 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=ee6e4bb92ad442dcb3b94d8be78bfa02
+2025-04-30 11:35:38,682 - INFO - Connecting to SSE endpoint: http://localhost:8000/sse
+2025-04-30 11:35:38,689 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=ee6e4bb92ad442dcb3b94d8be78bfa02
+2025-04-30 11:35:38,689 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,689 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,690 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,692 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+4b6abf8d85af40918736e83af8789c9a "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,692 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+169e5dcf91e041b3b244d6d6f5246750 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,694 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+56c29dc8a66e410f8472cf8fbf5ed6be "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,699 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+8923b3faf1fa4c99aa833fe1e9524f2f "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,700 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+7b1c59b5afe54a0d89e85e43ff0884e1 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,702 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+497314c7c9d549d8b83269c8c0579df6 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,705 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=ca942f94ce67414ebac25de4176c9f8a
+2025-04-30 11:35:38,705 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=ca942f94ce67414ebac25de4176c9f8a
+2025-04-30 11:35:38,706 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=06cd5d3745744e09a06601618bb50b49
+2025-04-30 11:35:38,706 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=06cd5d3745744e09a06601618bb50b49
+2025-04-30 11:35:38,706 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=3799706004e245fdaf21a838d85acd53
+2025-04-30 11:35:38,706 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=3799706004e245fdaf21a838d85acd53
+2025-04-30 11:35:38,709 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+4af68601320a48ff9aa29215042aaea1 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,715 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+fb6ba17a7ad1447c9f97751d1fac6797 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,716 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,718 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+b8e6e95302ed4e4e99100feeff1897d2 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,720 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+ca906bcd620d4bc48c1baf5c304ed993 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,723 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+8f1b2412a1e8426d972074c8e24337c8 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,726 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+c3eb0740bb7444f79811173ff1281732 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,728 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+785cd19a4a804e94a25c0abb2183c7bb "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,733 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+ea6e149abb9d4ab5a397d33a35b244b4 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,736 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+e808543df1e84605a5dab032125cfc3d "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,739 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+dc81cea7d3e64c659a1bfdb8af942de7 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,741 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+d641808fb7c8416789e641f6b5a6791c "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,744 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+8923b3faf1fa4c99aa833fe1e9524f2f "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,746 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+7b1c59b5afe54a0d89e85e43ff0884e1 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,749 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+497314c7c9d549d8b83269c8c0579df6 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,755 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,756 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,759 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+4af68601320a48ff9aa29215042aaea1 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,760 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=bff8bfca531e4980b9531eb73e67c463
+2025-04-30 11:35:38,761 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=bff8bfca531e4980b9531eb73e67c463
+2025-04-30 11:35:38,763 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,776 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+5f88252a276946b6a4f72adc3e7984c9 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,779 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+47eebce5ad8b4739a0997bf93b658557 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,782 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+b5829d63f1104bb387a60025ee0f4ae3 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,785 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+6983ce36f6ff4cf7ad3beddd0d6f4a23 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,788 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+772696847dae490f95ae1fb585595b15 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,791 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+61e207fed94c495fbc61761b7b8abd16 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,795 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+08ef602df6524975a3e46c92cfacff50 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,800 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+ee6e4bb92ad442dcb3b94d8be78bfa02 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,803 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+b8e6e95302ed4e4e99100feeff1897d2 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,805 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+ca906bcd620d4bc48c1baf5c304ed993 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,808 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+8f1b2412a1e8426d972074c8e24337c8 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,810 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+c3eb0740bb7444f79811173ff1281732 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,813 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+785cd19a4a804e94a25c0abb2183c7bb "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,815 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+dc81cea7d3e64c659a1bfdb8af942de7 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,818 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+d641808fb7c8416789e641f6b5a6791c "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,822 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=a05df71823a74271aa6075628d0c1f90
+2025-04-30 11:35:38,822 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=a05df71823a74271aa6075628d0c1f90
+2025-04-30 11:35:38,823 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=ba983a867ed24478bb5a3d4954366b6f
+2025-04-30 11:35:38,823 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=ba983a867ed24478bb5a3d4954366b6f
+2025-04-30 11:35:38,827 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=3f0b7e7d68b3435eaa20dc24b846708c
+2025-04-30 11:35:38,827 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=3f0b7e7d68b3435eaa20dc24b846708c
+2025-04-30 11:35:38,829 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,829 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,830 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,830 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,831 - INFO - HTTP Request: GET http://localhost:8000/sse "HTTP/1.1 200 OK"
+2025-04-30 11:35:38,835 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+ca942f94ce67414ebac25de4176c9f8a "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,838 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+06cd5d3745744e09a06601618bb50b49 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,842 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+3799706004e245fdaf21a838d85acd53 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,858 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+4b6abf8d85af40918736e83af8789c9a "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,860 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+169e5dcf91e041b3b244d6d6f5246750 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,862 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+56c29dc8a66e410f8472cf8fbf5ed6be "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,870 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=1eaaca4e8a5f4859b3f135ff7d6da9e8
+2025-04-30 11:35:38,870 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=1eaaca4e8a5f4859b3f135ff7d6da9e8
+2025-04-30 11:35:38,871 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=91256c7a94534a4f8428a22afa4b31e0
+2025-04-30 11:35:38,871 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=91256c7a94534a4f8428a22afa4b31e0
+2025-04-30 11:35:38,872 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=4422b5bc01464c8bb357d58b40df5ab1
+2025-04-30 11:35:38,872 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=4422b5bc01464c8bb357d58b40df5ab1
+2025-04-30 11:35:38,872 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=6b3ca019f5784148a3634b58741b9da6
+2025-04-30 11:35:38,873 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=6b3ca019f5784148a3634b58741b9da6
+2025-04-30 11:35:38,878 - INFO - Received endpoint URL: http://localhost:8000/messages/?session
+_id=b704a774f31d455daf79fa8c573e0467
+2025-04-30 11:35:38,878 - INFO - Starting post writer with endpoint URL: http://localhost:8000/
+messages/?session_id=b704a774f31d455daf79fa8c573e0467
+2025-04-30 11:35:38,889 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+bff8bfca531e4980b9531eb73e67c463 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,892 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+4b6abf8d85af40918736e83af8789c9a "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,899 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+169e5dcf91e041b3b244d6d6f5246750 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,986 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+56c29dc8a66e410f8472cf8fbf5ed6be "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,987 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+ea6e149abb9d4ab5a397d33a35b244b4 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,987 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+e808543df1e84605a5dab032125cfc3d "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,987 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+a05df71823a74271aa6075628d0c1f90 "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,987 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+ba983a867ed24478bb5a3d4954366b6f "HTTP/1.1 202 Accepted"
+2025-04-30 11:35:38,988 - INFO - HTTP Request: POST http://localhost:8000/messages/?session_id=
+3f0b7e7d68b3435eaa20dc24b846708c "HTTP/1.1 202 Accepted"
+[04/30/25 11:35:39] DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x107205e10>                                                      
+[04/30/25 11:35:40] INFO     Processing request of type CallToolRequest           server.py:536
+                    DEBUG    Dispatching request of type CallToolRequest          server.py:539
+                    DEBUG    Response sent                                        server.py:574
+[04/30/25 11:35:40] DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x105a3a2d0>                                                      
+[04/30/25 11:35:40] DEBUG    Received message:                                    server.py:494
+                             <mcp.shared.session.RequestResponder object at                    
+                             0x105599810>                                                      
+                    INFO     Processing request of type CallToolRequest           server.py:536
+                    INFO     Processing request of type CallToolRequest           server.py:536
+                    DEBUG    Dispatching request of type CallToolRequest          server.py:539
+                    DEBUG    Dispatching request of type CallToolRequest          server.py:539
+                    DEBUG    Response sent                                        server.py:574
+                    DEBUG    Response sent                                        server.py:574
+2025-04-30 11:35:40,503 - ERROR - [Test 2/37] Error during test execution for query 'Multiply 5
+4 and 95': 'AddableValuesDict' object has no attribute 'content'
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 37, in main
+    return response.content
+           ^^^^^^^^^^^^^^^^
+AttributeError: 'AddableValuesDict' object has no attribute 'content'
+2025-04-30 11:35:40,899 - ERROR - [Test 3/37] Error during test execution for query 'What is th
+e product of 19 and 60?': 'AddableValuesDict' object has no attribute 'content'
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 37, in main
+    return response.content
+           ^^^^^^^^^^^^^^^^
+AttributeError: 'AddableValuesDict' object has no attribute 'content'
+2025-04-30 11:35:40,958 - ERROR - [Test 1/37] Error during test execution for query 'What is th
+e product of 65 and 20?': 'AddableValuesDict' object has no attribute 'content'
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 37, in main
+    return response.content
+           ^^^^^^^^^^^^^^^^
+AttributeError: 'AddableValuesDict' object has no attribute 'content'
+2025-04-30 11:35:43,876 - ERROR - Error in post_writer: 
+2025-04-30 11:35:43,877 - ERROR - Error in post_writer: 
+2025-04-30 11:35:43,877 - ERROR - Error in post_writer: 
+2025-04-30 11:35:43,877 - ERROR - Error in post_writer: 
+2025-04-30 11:35:43,880 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,002 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,003 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,003 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,003 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,003 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,003 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,003 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,003 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,003 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,003 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,005 - ERROR - Error in post_writer: 
+2025-04-30 11:35:44,121 - ERROR - [Test 25/37] Error during test execution for query 'Give me t
+he weather forecast for Sydney for the next 1 days.': 
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 19, in main
+    async with MultiServerMCPClient({
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 357, in __aenter__
+    await self.connect_to_server(server_name, **connection)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 170, in connect_to_server
+    await self.connect_to_server_via_sse(
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 286, in connect_to_server_via_sse
+    await self._initialize_session_and_load_tools(server_name, session)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 143, in _initialize_session_and_load_tools
+    server_tools = await load_mcp_tools(session)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/tools.py", line 72, in load_mcp_tools
+    tools = await session.list_tools()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/client/s
+ession.py", line 283, in list_tools
+    return await self.send_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/shared/s
+ession.py", line 245, in send_request
+    await self._write_stream.send(JSONRPCMessage(jsonrpc_request))
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/anyio/stream
+s/memory.py", line 255, in send
+    raise BrokenResourceError from None
+anyio.BrokenResourceError
+2025-04-30 11:35:44,126 - ERROR - [Test 24/37] Error during test execution for query 'What is t
+he product of 2 and 80?': 
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 19, in main
+    async with MultiServerMCPClient({
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 357, in __aenter__
+    await self.connect_to_server(server_name, **connection)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 170, in connect_to_server
+    await self.connect_to_server_via_sse(
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 286, in connect_to_server_via_sse
+    await self._initialize_session_and_load_tools(server_name, session)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 143, in _initialize_session_and_load_tools
+    server_tools = await load_mcp_tools(session)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/tools.py", line 72, in load_mcp_tools
+    tools = await session.list_tools()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/client/s
+ession.py", line 283, in list_tools
+    return await self.send_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/shared/s
+ession.py", line 245, in send_request
+    await self._write_stream.send(JSONRPCMessage(jsonrpc_request))
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/anyio/stream
+s/memory.py", line 255, in send
+    raise BrokenResourceError from None
+anyio.BrokenResourceError
+2025-04-30 11:35:44,126 - ERROR - [Test 22/37] Error during test execution for query 'What is t
+he difference between 63 and 94?': 
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 19, in main
+    async with MultiServerMCPClient({
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 357, in __aenter__
+    await self.connect_to_server(server_name, **connection)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 170, in connect_to_server
+    await self.connect_to_server_via_sse(
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 286, in connect_to_server_via_sse
+    await self._initialize_session_and_load_tools(server_name, session)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 143, in _initialize_session_and_load_tools
+    server_tools = await load_mcp_tools(session)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/tools.py", line 72, in load_mcp_tools
+    tools = await session.list_tools()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/client/s
+ession.py", line 283, in list_tools
+    return await self.send_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/shared/s
+ession.py", line 245, in send_request
+    await self._write_stream.send(JSONRPCMessage(jsonrpc_request))
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/anyio/stream
+s/memory.py", line 255, in send
+    raise BrokenResourceError from None
+anyio.BrokenResourceError
+2025-04-30 11:35:44,127 - ERROR - [Test 20/37] Error during test execution for query 'What is t
+he weather forecast for London?': 
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 19, in main
+    async with MultiServerMCPClient({
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 357, in __aenter__
+    await self.connect_to_server(server_name, **connection)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 170, in connect_to_server
+    await self.connect_to_server_via_sse(
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 286, in connect_to_server_via_sse
+    await self._initialize_session_and_load_tools(server_name, session)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 143, in _initialize_session_and_load_tools
+    server_tools = await load_mcp_tools(session)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/tools.py", line 72, in load_mcp_tools
+    tools = await session.list_tools()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/client/s
+ession.py", line 283, in list_tools
+    return await self.send_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/shared/s
+ession.py", line 245, in send_request
+    await self._write_stream.send(JSONRPCMessage(jsonrpc_request))
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/anyio/stream
+s/memory.py", line 255, in send
+    raise BrokenResourceError from None
+anyio.BrokenResourceError
+2025-04-30 11:35:44,127 - ERROR - [Test 26/37] Error during test execution for query 'What is t
+he weather like in Tokyo?': 
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 19, in main
+    async with MultiServerMCPClient({
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 357, in __aenter__
+    await self.connect_to_server(server_name, **connection)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 170, in connect_to_server
+    await self.connect_to_server_via_sse(
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 286, in connect_to_server_via_sse
+    await self._initialize_session_and_load_tools(server_name, session)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 143, in _initialize_session_and_load_tools
+    server_tools = await load_mcp_tools(session)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/tools.py", line 72, in load_mcp_tools
+    tools = await session.list_tools()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/client/s
+ession.py", line 283, in list_tools
+    return await self.send_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/shared/s
+ession.py", line 245, in send_request
+    await self._write_stream.send(JSONRPCMessage(jsonrpc_request))
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/anyio/stream
+s/memory.py", line 255, in send
+    raise BrokenResourceError from None
+anyio.BrokenResourceError
+2025-04-30 11:35:44,128 - ERROR - [Test 18/37] Error during test execution for query 'What is t
+he weather like in London?': 
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 19, in main
+    async with MultiServerMCPClient({
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 357, in __aenter__
+    await self.connect_to_server(server_name, **connection)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 170, in connect_to_server
+    await self.connect_to_server_via_sse(
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 286, in connect_to_server_via_sse
+    await self._initialize_session_and_load_tools(server_name, session)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 143, in _initialize_session_and_load_tools
+    server_tools = await load_mcp_tools(session)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/tools.py", line 72, in load_mcp_tools
+    tools = await session.list_tools()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/client/s
+ession.py", line 283, in list_tools
+    return await self.send_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/shared/s
+ession.py", line 245, in send_request
+    await self._write_stream.send(JSONRPCMessage(jsonrpc_request))
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/anyio/stream
+s/memory.py", line 255, in send
+    raise BrokenResourceError from None
+anyio.BrokenResourceError
+2025-04-30 11:35:44,128 - ERROR - [Test 19/37] Error during test execution for query 'What is t
+he product of 12 and 31?': 
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 19, in main
+    async with MultiServerMCPClient({
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 357, in __aenter__
+    await self.connect_to_server(server_name, **connection)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 170, in connect_to_server
+    await self.connect_to_server_via_sse(
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 286, in connect_to_server_via_sse
+    await self._initialize_session_and_load_tools(server_name, session)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 143, in _initialize_session_and_load_tools
+    server_tools = await load_mcp_tools(session)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/tools.py", line 72, in load_mcp_tools
+    tools = await session.list_tools()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/client/s
+ession.py", line 283, in list_tools
+    return await self.send_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/shared/s
+ession.py", line 245, in send_request
+    await self._write_stream.send(JSONRPCMessage(jsonrpc_request))
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/anyio/stream
+s/memory.py", line 255, in send
+    raise BrokenResourceError from None
+anyio.BrokenResourceError
+2025-04-30 11:35:44,132 - ERROR - [Test 23/37] Error during test execution for query 'What is t
+he weather like in Moscow?': 
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 19, in main
+    async with MultiServerMCPClient({
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 357, in __aenter__
+    await self.connect_to_server(server_name, **connection)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 170, in connect_to_server
+    await self.connect_to_server_via_sse(
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 286, in connect_to_server_via_sse
+    await self._initialize_session_and_load_tools(server_name, session)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 143, in _initialize_session_and_load_tools
+    server_tools = await load_mcp_tools(session)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/tools.py", line 72, in load_mcp_tools
+    tools = await session.list_tools()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/client/s
+ession.py", line 283, in list_tools
+    return await self.send_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/shared/s
+ession.py", line 245, in send_request
+    await self._write_stream.send(JSONRPCMessage(jsonrpc_request))
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/anyio/stream
+s/memory.py", line 255, in send
+    raise BrokenResourceError from None
+anyio.BrokenResourceError
+2025-04-30 11:35:44,134 - ERROR - [Test 21/37] Error during test execution for query 'What is t
+he weather like in New York?': 
+Traceback (most recent call last):
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/tests/test_e2e_agent.py", line 155, in run_sing
+le_test
+    response_content = await run_agent_query(user_query=query)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/client.py", line 19, in main
+    async with MultiServerMCPClient({
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 357, in __aenter__
+    await self.connect_to_server(server_name, **connection)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 170, in connect_to_server
+    await self.connect_to_server_via_sse(
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 286, in connect_to_server_via_sse
+    await self._initialize_session_and_load_tools(server_name, session)
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/client.py", line 143, in _initialize_session_and_load_tools
+    server_tools = await load_mcp_tools(session)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/langchain_mc
+p_adapters/tools.py", line 72, in load_mcp_tools
+    tools = await session.list_tools()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/client/s
+ession.py", line 283, in list_tools
+    return await self.send_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/mcp/shared/s
+ession.py", line 245, in send_request
+    await self._write_stream.send(JSONRPCMessage(jsonrpc_request))
+  File "/Users/bprzybysz/nc-src/langoctopus-mcp/.venv/lib/python3.11/site-packages/anyio/stream
+s/memory.py", line 255, in send
+    raise BrokenResourceError from None
+anyio.BrokenResourceError
+2025-04-30 11:35:45,468 - ERROR - Error in post_writer:
