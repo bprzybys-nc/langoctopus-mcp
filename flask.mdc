@@ -117,3 +117,10 @@ alwaysApply: false
 - Consider using cloud storage for production
 - Implement proper error handling for upload failures
 
+## Backend Service for Frontend
+- The backend API runs at: http://localhost:5000
+- Serves both the API endpoints and the static frontend files
+- Uses Socket.IO for real-time communication with the frontend
+- Integrates with the existing agent code to process queries
+- Provides sample data endpoints for testing without the full agent
+

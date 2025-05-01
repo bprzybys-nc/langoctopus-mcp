@@ -1,0 +1,64 @@
+<svg width="180" height="200" viewBox="0 0 180 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Robot Head -->
+  <rect x="40" y="20" width="100" height="70" rx="15" fill="#4ECDC4" stroke="#1A1A2E" stroke-width="4"/>
+  
+  <!-- Robot Eyes -->
+  <rect x="60" y="40" width="20" height="15" rx="2" fill="#1A1A2E"/>
+  <rect x="100" y="40" width="20" height="15" rx="2" fill="#1A1A2E"/>
+  <rect x="63" y="43" width="14" height="9" rx="1" fill="#FFE66D" class="eye-scan"/>
+  <rect x="103" y="43" width="14" height="9" rx="1" fill="#FFE66D" class="eye-scan"/>
+  
+  <!-- Robot Mouth -->
+  <rect x="60" y="70" width="60" height="8" rx="4" fill="#1A1A2E"/>
+  <rect x="70" y="70" width="5" height="8" fill="#FF6B6B" class="speak-light"/>
+  <rect x="85" y="70" width="5" height="8" fill="#FF6B6B" class="speak-light"/>
+  <rect x="100" y="70" width="5" height="8" fill="#FF6B6B" class="speak-light"/>
+  
+  <!-- Robot Antenna -->
+  <rect x="85" y="10" width="10" height="10" fill="#FF6B6B"/>
+  <rect x="83" y="0" width="14" height="10" rx="2" fill="#FFE66D"/>
+  
+  <!-- Robot Body -->
+  <rect x="50" y="100" width="80" height="70" rx="10" fill="#FF6B6B" stroke="#1A1A2E" stroke-width="4"/>
+  
+  <!-- Robot Controls -->
+  <rect x="65" y="115" width="50" height="20" rx="5" fill="#1A1A2E"/>
+  <circle cx="75" cy="125" r="5" fill="#4ECDC4" class="control-light"/>
+  <circle cx="90" cy="125" r="5" fill="#4ECDC4" class="control-light"/>
+  <circle cx="105" cy="125" r="5" fill="#4ECDC4" class="control-light"/>
+  
+  <rect x="70" y="145" width="40" height="15" rx="3" fill="#4ECDC4"/>
+  
+  <!-- Robot Arms -->
+  <rect x="130" y="110" width="30" height="10" rx="5" fill="#4ECDC4" stroke="#1A1A2E" stroke-width="2"/>
+  <rect x="160" y="110" width="10" height="25" rx="5" fill="#4ECDC4" stroke="#1A1A2E" stroke-width="2"/>
+  
+  <!-- Robot Legs -->
+  <rect x="60" y="170" width="20" height="30" rx="5" fill="#1A1A2E"/>
+  <rect x="100" y="170" width="20" height="30" rx="5" fill="#1A1A2E"/>
+  
+  <style>
+    .eye-scan {
+      animation: scan 2s infinite alternate;
+    }
+    .speak-light {
+      animation: speak 0.5s infinite alternate;
+    }
+    .control-light {
+      animation: pulse 1.5s infinite alternate;
+    }
+    @keyframes scan {
+      from { transform: translateX(-3px); }
+      to { transform: translateX(3px); }
+    }
+    @keyframes speak {
+      from { opacity: 0.3; }
+      to { opacity: 1; }
+    }
+    @keyframes pulse {
+      0% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+  </style>
+</svg> 

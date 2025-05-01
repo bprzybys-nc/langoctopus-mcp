@@ -101,5 +101,12 @@ alwaysApply: false
 - Consider using Django Rest Framework or Flask-RESTful for API development
 - Implement proper authentication between React frontend and Python backend
 
+## Frontend Service
+- The frontend development server runs at: http://localhost:3000
+- Production build should be served from the backend at: http://localhost:5000
+- The retro UI features robot avatars on left and right sides
+- Chat history is displayed in reverse chronological order (older messages at top)
+- Uses WebSockets for real-time communication with the backend
+
 
 

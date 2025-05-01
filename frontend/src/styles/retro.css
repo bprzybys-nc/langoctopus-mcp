@@ -1,0 +1,214 @@
+/* Retro Color Palette */
+:root {
+  --primary: #FF6B6B;
+  --secondary: #4ECDC4;
+  --background: #1A1A2E;
+  --text: #F7FFF7;
+  --accent: #FFE66D;
+  --dark-accent: #121225;
+  --error: #FF3333;
+  --terminal-green: #5AF78E;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* Retro Scanlines Effect */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 15;
+  background-size: 100% 4px;
+  animation: scanlines 1s linear infinite;
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+  0% { opacity: 0.9; }
+  5% { opacity: 1; }
+  10% { opacity: 0.9; }
+  15% { opacity: 1; }
+  20% { opacity: 0.9; }
+  25% { opacity: 1; }
+  30% { opacity: 0.9; }
+  35% { opacity: 1; }
+  40% { opacity: 0.9; }
+  45% { opacity: 1; }
+  50% { opacity: 0.9; }
+  55% { opacity: 1; }
+  60% { opacity: 0.9; }
+  65% { opacity: 1; }
+  70% { opacity: 0.9; }
+  75% { opacity: 1; }
+  80% { opacity: 0.9; }
+  85% { opacity: 1; }
+  90% { opacity: 0.9; }
+  95% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+@keyframes scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 4px; }
+}
+
+/* Terminal text effect */
+.terminal-text {
+  color: var(--terminal-green);
+  text-shadow: 0 0 2px var(--terminal-green);
+  animation: flicker 4s infinite;
+}
+
+/* Retro Container */
+.retro-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Robot Containers */
+.robot-container {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  position: relative;
+}
+
+.robot-container.left {
+  border-right: 3px solid var(--primary);
+}
+
+.robot-container.right {
+  border-left: 3px solid var(--secondary);
+}
+
+.robot-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Chat Container */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--dark-accent);
+  border-radius: 5px;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: auto;
+  padding: 1rem;
+  flex: 1;
+}
+
+/* Message Styles */
+.message {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  max-width: 80%;
+  word-wrap: break-word;
+  position: relative;
+  border: 2px solid;
+}
+
+.message.left {
+  align-self: flex-start;
+  background-color: var(--primary);
+  border-color: var(--accent);
+}
+
+.message.right {
+  align-self: flex-end;
+  background-color: var(--secondary);
+  border-color: var(--accent);
+  color: var(--dark-accent);
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+  background-color: var(--text);
+  border-radius: 50%;
+  display: inline-block;
+  animation: typing 1.5s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-5px); }
+  50% { transform: translateY(0); }
+}
+
+/* Title and Header */
+.app-title {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px var(--dark-accent);
+} 
