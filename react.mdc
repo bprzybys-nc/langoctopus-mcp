@@ -1,0 +1,105 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# React Rules
+
+## Core Principles
+- React components must be pure functions with respect to their props
+- State updates are asynchronous and should be treated as immutable
+- Hooks must be called at the top level of components or custom hooks
+- Never conditionally call hooks (e.g., inside if statements or loops)
+- Keys are required when rendering lists of elements
+- Always use functional components over class components
+
+## Component Rules
+- Component names must start with a capital letter (PascalCase)
+- Each component should have a single responsibility
+- Extract repeated or complex logic into custom hooks
+- Use composition over inheritance
+- Keep components small and focused
+
+## Props Rules
+- Treat props as read-only
+- Destructure props for clarity: `function Component({ prop1, prop2 })`
+- Use default props for optional values
+- Validate props with PropTypes or TypeScript
+- Use spread syntax wisely for passing props: `<Component {...props} />`
+
+## State Management
+- Use `useState` for simple component state
+- Use `useReducer` for complex state logic
+- Lift state up to the nearest common ancestor when shared
+- Use `useContext` for deeply nested state sharing
+- Never mutate state directly; always use the state setter function
+- Use functional updates for state that depends on previous state: `setState(prev => prev + 1)`
+- Use object spread for updating objects: `setObj({...obj, key: value})`
+- Use array methods like `map`, `filter`, and spread for updating arrays
+
+## Effects and Lifecycle
+- Use `useEffect` for side effects (data fetching, subscriptions, DOM mutations)
+- Always specify dependencies array in `useEffect`
+- Clean up side effects in the return function of `useEffect`
+- Use `useLayoutEffect` for DOM measurements before browser paint
+- Avoid unnecessary re-renders with `useMemo` and `useCallback`
+
+## Event Handling
+- Name event handlers with the `handle` prefix: `handleClick`
+- Pass event handlers as props with the `on` prefix: `onClick`
+- Use arrow functions for inline event handlers
+- Debounce or throttle expensive event handlers
+
+## Styling
+- Use `className` instead of HTML's `class` attribute
+- Consider CSS modules, styled components, or other CSS-in-JS solutions
+- Keep styles close to the components they affect
+
+## Performance Optimization
+- Use React.memo for expensive components
+- Use `useMemo` to memoize expensive calculations
+- Use `useCallback` to memoize event handlers passed to child components
+- Use virtual lists for rendering large datasets
+
+## Forms
+- Use controlled components for form elements
+- Handle form submission with a form element's `onSubmit` event
+- Group related form state in objects
+
+## Accessibility
+- Use semantic HTML elements
+- Provide appropriate ARIA attributes
+- Ensure keyboard navigation works
+- Handle focus management, especially for modals and dialogs
+
+## Error Handling
+- Use error boundaries to catch and handle errors
+- Provide fallback UI for error states
+- Add proper validation for user inputs
+
+## Testing
+- Test components in isolation
+- Focus on testing behavior, not implementation details
+- Use React Testing Library for user-centric tests
+- Mock external dependencies
+
+## Security
+- Sanitize user input to prevent XSS attacks
+- Don't use `dangerouslySetInnerHTML` unless absolutely necessary
+- Use HTTPS for API requests
+
+## React 18+ Features
+- Use `createRoot` instead of `render` for mounting
+- Consider concurrent mode for better user experience
+- Use Suspense for code splitting and data fetching
+- Use transitions for non-urgent updates
+
+## React with Python Backend
+- React can work with any backend including Python (Django, Flask)
+- Use fetch or axios in React to call Python backend APIs
+- Ensure proper CORS configuration on the Python backend
+- Consider using Django Rest Framework or Flask-RESTful for API development
+- Implement proper authentication between React frontend and Python backend
+
+
+

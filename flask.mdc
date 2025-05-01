@@ -1,0 +1,119 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Flask Rules
+
+## Core Principles
+- Flask is a microframework based on Werkzeug and Jinja2
+- Follow the separation of concerns (MVC pattern)
+- Use Flask's application factory pattern for larger applications
+- Keep routes and view functions organized
+- Use blueprints to organize your application
+
+## Application Structure
+- Use application factory pattern (`create_app()` function)
+- Organize code into logical modules (blueprints)
+- Keep configuration separate from application code
+- Use environment variables for sensitive configuration
+- Place templates and static files in their respective directories
+
+## Routing
+- Keep URL routes clean and intuitive
+- Use appropriate HTTP methods for different operations
+- Include trailing slashes consistently
+- Use URL converters for dynamic parts of routes
+- Leverage `url_for()` instead of hardcoding URLs
+
+## View Functions
+- Keep view functions focused on a single responsibility
+- Validate incoming data
+- Return appropriate HTTP status codes
+- Use decorators for cross-cutting concerns (auth, logging)
+- Handle errors explicitly
+
+## Templates
+- Use Jinja2 templates for HTML generation
+- Escape user-provided content to prevent XSS attacks
+- Create a base template and extend it
+- Use template inheritance for consistent layouts
+- Keep business logic out of templates
+
+## Forms
+- Use Flask-WTF for form handling and validation
+- Define form classes separately from routes
+- Include CSRF protection
+- Validate form data before processing
+- Display validation errors to users
+
+## Database
+- Use Flask-SQLAlchemy for database operations
+- Create database models for your data
+- Use migrations (Flask-Migrate) to manage schema changes
+- Keep database operations outside of view functions
+- Implement proper error handling for database operations
+
+## Authentication
+- Store passwords securely (use password hashing)
+- Implement session-based or token-based authentication
+- Protect sensitive routes with login_required decorators
+- Use Flask-Login for session management
+- Set appropriate cookie security flags
+
+## Security
+- Always escape user input to prevent XSS attacks
+- Use CSRF protection for forms
+- Validate file uploads and use secure_filename
+- Set proper Content Security Policy headers
+- Keep dependencies updated to avoid vulnerabilities
+
+## Error Handling
+- Define custom error handlers for common HTTP errors
+- Log errors appropriately
+- Provide user-friendly error messages
+- Return appropriate status codes
+- Consider different formats for API errors (JSON vs HTML)
+
+## API Design
+- Use RESTful principles for API endpoints
+- Return consistent JSON structures
+- Include proper HTTP status codes
+- Use API versioning
+- Implement pagination for large collections
+
+## Testing
+- Write tests for your application
+- Use Flask's test client for integration tests
+- Mock external services in tests
+- Test both success and error paths
+- Test database operations with a test database
+
+## Performance
+- Use caching when appropriate
+- Optimize database queries
+- Use background tasks for long-running operations
+- Consider using async capabilities for IO-bound operations
+- Implement proper connection pooling
+
+## Deployment
+- Use WSGI servers in production (Gunicorn, uWSGI)
+- Set DEBUG=False in production
+- Use a reverse proxy (Nginx, Apache)
+- Use environment variables for configuration
+- Implement logging for production troubleshooting
+
+## Integration with Frontend (React)
+- Implement proper CORS handling for API endpoints
+- Structure API responses to be easily consumed by React
+- Consider using Flask-RESTful or Flask-RESTX for API development
+- Use JSON Web Tokens (JWT) for authentication if building a SPA
+- Provide proper API documentation
+
+## File Uploads
+- Validate file uploads (type, size, content)
+- Use secure_filename to sanitize filenames
+- Store files outside of the web root if possible
+- Consider using cloud storage for production
+- Implement proper error handling for upload failures
+
