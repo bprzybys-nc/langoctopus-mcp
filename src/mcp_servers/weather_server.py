@@ -1,12 +1,22 @@
 from mcp.server.fastmcp import FastMCP
+import random
 
 mcp = FastMCP("Weather")
+
+def get_random_temp() -> int:
+    """Generate a random temperature between 20-32°C"""
+    return random.randint(20, 32)
+
+def get_random_range() -> int:
+    """Generate a random temperature range between 2-7°C"""
+    return random.randint(2, 7)
 
 @mcp.tool()
 def get_weather(location: str) -> str:
     """Get weather for a location"""
     # Placeholder for real API call
-    return f"It's currently sunny and 22°C in {location}."
+    temp = get_random_temp()
+    return f"It's currently sunny and {temp}°C in {location}."
 
 @mcp.tool()
 def get_forecast(location: str, days: int = 3) -> str:
@@ -14,7 +24,7 @@ def get_forecast(location: str, days: int = 3) -> str:
     # Placeholder for real API call
     weather_patterns = [
         "sunny with occasional clouds",
-        "partly cloudy with light rain",
+        "partly cloudy with light rain", 
         "overcast with heavy rain",
         "clear skies with strong winds",
         "thunderstorms in the afternoon",
@@ -27,9 +37,10 @@ def get_forecast(location: str, days: int = 3) -> str:
         "windy with clear skies",
         "misty with light showers"
     ]
-    import random
     pattern = random.choice(weather_patterns)
-    return f"{days}-day forecast for {location}: Expect mild temperatures around 20-25°C with {pattern}."
+    base_temp = get_random_temp()
+    temp_range = get_random_range()
+    return f"{days}-day forecast for {location}: Expect temperatures between {base_temp}-{base_temp+temp_range}°C with {pattern}."
 
 if __name__ == "__main__":
-    mcp.run(transport="sse", port=8000) 
+    mcp.run(transport="sse")

@@ -1,0 +1,104 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Mermaid Syntax Rules (.mdc)
+
+This file summarizes key Mermaid syntax rules used in this project.
+
+## General
+
+*   Comments: `%% comment text`
+*   Direction: `direction TD` (Top-Down), `direction LR` (Left-Right)
+*   Escaping Text: Enclose text with special characters (e.g., `?`, `%`, `()`, `{}`) in double quotes `"`. For tricky characters within quotes (like `"` itself), use HTML entity codes (e.g., `&quot;`, `#35;`).
+*   Text: use proper html special chars escaping - or simply minimize usage of these
+
+## Class Diagrams (`classDiagram`)
+
+*   **Classes:**
+    *   `class ClassName`
+    *   `class ClassName {
+        +publicMember: type
+        -privateMember
+        #protectedMember
+        ~packageMember
+        +method(arg: type): returnType
+        +abstractMethod()* : type
+        +staticMethod()$
+        -staticField$
+      }`
+    *   Label: `class "Identifier" Label` or `class Identifier["Label Text"]` (Use simple IDs where possible)
+    *   Generic Type: `ClassName~T~` or `member: List~int~`
+*   **Relationships:**
+    *   Inheritance: `<|--`
+    *   Composition: `*--`
+    *   Aggregation: `o--`
+    *   Association: `-->` or `<--`
+    *   Link (Solid): `--`
+    *   Dependency: `..>` or `<..`
+    *   Realization: `..|>` or `<|..`
+    *   Link (Dashed): `..`
+*   **Relationship Labels & Cardinality:**
+    *   `ClassA "cardinality1" --> "cardinality2" ClassB : label text`
+*   **Annotations:**
+    *   `<<Interface>> ClassName`
+    *   `class ClassName {
+          <<Annotation>>
+        }`
+*   **Namespaces:**
+    *   `namespace Outer {
+          class Inner {}
+        }`
+
+## Sequence Diagrams (`sequenceDiagram`)
+
+*   **Participants:** `participant Alias as Description` or `participant Name`
+*   **Messages:**
+    *   Solid line, solid arrow: `A->>B: Message Text`
+    *   Dashed line, solid arrow: `A-->>B: Message Text`
+    *   Solid line, open arrow: `A->B: Message Text`
+    *   Dashed line, open arrow: `A-->B: Message Text`
+*   **Activation/Deactivation:**
+    *   `activate Participant`
+    *   `deactivate Participant`
+*   **Notes:**
+    *   `Note right of A: Text`
+    *   `Note left of A: Text`
+    *   `Note over A: Text`
+    *   `Note over A,B: Text`
+*   **Loops, Alts, Opts:**
+    *   `loop Text
+        A->>B: Message
+      end`
+    *   `alt Condition1
+        A->>B: Message
+      else Condition2
+        A->>C: Message
+      end`
+    *   `opt Text
+        A->>B: Message
+      end`
+
+## Flowcharts (`flowchart TD` or `flowchart LR`)
+
+*   **Nodes:**
+    *   Default (rectangle): `id[Text]`
+    *   Rounded rectangle: `id(Text)`
+    *   Stadium shape: `id([Text])`
+    *   Subroutine shape: `id[[Text]]`
+    *   Cylindrical: `id[(Text)]`
+    *   Circle: `id((Text))`
+    *   Rhombus (decision): `id{Text}`
+    *   Hexagon: `id{{Text}}`
+*   **Links:**
+    *   Arrow: `A --> B`
+    *   Open link: `A --- B`
+    *   Text on link: `A -- Text --> B` or `A ---|Text| B`
+    *   Thick link: `A ==> B`
+    *   Dotted link: `A -.-> B`
+    *   Text on dotted link: `A -. Text .-> B`
+*   **Subgraphs:**
+    *   `subgraph Title
+        id1 --> id2
+      end`

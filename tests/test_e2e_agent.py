@@ -45,7 +45,7 @@ async def start_servers():
     logger.info("Starting MCP servers for E2E test...")
     try:
         # Start math server (stdio transport)
-        math_command = [sys.executable, os.path.join(project_root, "math_server.py")]
+        math_command = [sys.executable, os.path.join(project_root, "src", "mcp_servers", "math_server.py")]
         logger.info(f"Starting math server: {' '.join(math_command)}")
         math_server = await asyncio.create_subprocess_exec(
             *math_command,
@@ -57,7 +57,7 @@ async def start_servers():
         logger.info(f"Math server started (PID: {math_server.pid})")
 
         # Start weather server (SSE transport)
-        weather_command = [sys.executable, os.path.join(project_root, "weather_server.py")]
+        weather_command = [sys.executable, os.path.join(project_root, "src", "mcp_servers", "weather_server.py")]
         logger.info(f"Starting weather server: {' '.join(weather_command)}")
         weather_server = await asyncio.create_subprocess_exec(
             *weather_command,
@@ -156,52 +156,46 @@ async def run_single_test(iteration, total_requests, agent_executor): # agent_ex
         # Ensure the agent function is available
         if agent_executor is None:
              logger.error("Agent executor not available.")
-             return False
+             return {"query": query, "response": "Error: Agent not available", "success": False}
 
         # Invoke the pre-configured agent
         response = await agent_executor.ainvoke({"messages": [{"role": "user", "content": query}]})
 
-        # --- Response handling logic (from client.py, adapted) ---
-        response_content = "Error: Response structure invalid." # Default error
+        # --- Response handling logic ---
+        response_content = "Error: Response structure invalid."
+        success_flag = False # Default to failure unless explicitly set
         if response and isinstance(response, dict) and 'messages' in response and isinstance(response['messages'], list) and len(response['messages']) > 0:
             last_message = response['messages'][-1]
             if hasattr(last_message, 'content'):
-                response_content = last_message.content # AIMessage
+                response_content = last_message.content
+                success_flag = True # Assume success if content extracted
             elif isinstance(last_message, dict) and 'content' in last_message:
-                response_content = last_message['content'] # Dict message
+                response_content = last_message['content']
+                success_flag = True # Assume success if content extracted
             else:
                 logger.error(f"[Test {iteration}/{total_requests}] Could not extract content from last message. Type: {type(last_message)}, Value: {last_message}")
                 response_content = "Error: Could not parse final message content."
+                success_flag = False
         else:
             logger.error(f"[Test {iteration}/{total_requests}] Unexpected agent response structure: {type(response)} - {response}")
-            # Return False as this is a definite failure
-            return False
-        # --- End Response handling logic ---
+            response_content = "Error: Could not parse agent response structure."
+            success_flag = False
 
-        if response_content:
+        # --- Log outcome ---
+        if success_flag:
             logger.info(f"[Test {iteration}/{total_requests}] Received response: '{response_content}'")
-            # Basic validation: Check for errors or presence of expected hints
+            # Basic validation: Check for errors
             if "error" in response_content.lower() or "unknown operation" in response_content.lower():
                  logger.warning(f"[Test {iteration}/{total_requests}] Potential error keyword in response: '{response_content}'")
-                 # return False # Allow continuing for now, but log warning
-            # Check if at least one hint is present (very basic check)
-            # elif not any(hint in response_content for hint in expected_hints):
-            #      logger.warning(f"[Test {iteration}/{total_requests}] Response might be missing expected info (hints: {expected_hints}). Response: '{response_content}'")
-
+                 # Consider setting success_flag = False here if these indicate failure
         else:
-            # This case should be less likely now with the improved handling above
-            logger.error(f"[Test {iteration}/{total_requests}] No response content extracted.")
-            return False
-            
-        return True
+            logger.error(f"[Test {iteration}/{total_requests}] Failed to get valid response content.")
+
+        return {"query": query, "response": response_content, "success": success_flag}
 
     except Exception as e:
-        logger.error(f"[Test {iteration}/{total_requests}] Error during test execution for query '{query}': {e}", exc_info=True)
-        # Check if the error is the one we are tracking
-        if isinstance(e, ImportError): # Just an example, adjust if needed
-             logger.critical(f"ImportError encountered: {e}. Aborting test.")
-             # Potentially re-raise or handle specifically if it indicates a setup issue
-        return False
+        logger.error(f"[Test {iteration}/{total_requests}] Exception during test execution for query '{query}': {e}", exc_info=True)
+        return {"query": query, "response": f"Exception: {e}", "success": False}
 
 async def main_test_runner(num_requests):
     """Runs the main E2E test suite, managing servers and running tests concurrently."""
@@ -212,13 +206,14 @@ async def main_test_runner(num_requests):
         return
 
     agent_executor = None
+    all_results = [] # List to store result dicts
     try:
         # Use async with for the client lifecycle
         logger.info("Setting up MCP client...")
         async with MultiServerMCPClient({
             "math": {
                 "command": sys.executable,
-                "args": [os.path.join(project_root, "math_server.py")],
+                "args": [os.path.join(project_root, "src", "mcp_servers", "math_server.py")],
                 "transport": "stdio"
             },
             "weather": {
@@ -252,28 +247,64 @@ async def main_test_runner(num_requests):
                 
                 # Run tasks concurrently
                 logger.info(f"Running {len(tasks)} test tasks concurrently using asyncio.gather...")
-                results = await asyncio.gather(*tasks, return_exceptions=True)
+                all_results = await asyncio.gather(*tasks, return_exceptions=True)
                 logger.info("All test tasks completed.")
 
                 # Process results
                 success_count = 0
                 failure_count = 0
-                for i, result in enumerate(results):
+                successful_pairs = []
+                failed_pairs = []
+                
+                for i, result in enumerate(all_results):
                     test_num = i + 1
                     if isinstance(result, Exception):
-                        logger.error(f"[Test {test_num}/{num_requests}] Failed with exception: {result}")
+                        logger.error(f"[Test {test_num}/{num_requests}] Task failed with exception: {result}")
                         failure_count += 1
-                    elif result is True:
-                        success_count += 1
-                    else: # Should ideally be False if run_single_test returned False
-                        logger.warning(f"[Test {test_num}/{num_requests}] Returned unexpected non-exception value or False: {result}")
-                        failure_count += 1 # Count unexpected returns/False as failures
+                        # Try to get query if possible (may not be available if task itself failed early)
+                        # We don't have the query readily available here if the task itself failed.
+                        failed_pairs.append({"query": f"Task {test_num} (Query Unknown)", "response": f"Exception: {result}", "success": False})
+                    elif isinstance(result, dict):
+                        if result.get("success"):
+                            success_count += 1
+                            successful_pairs.append(result)
+                        else:
+                            failure_count += 1
+                            failed_pairs.append(result)
+                    else: # Unexpected result type from gather
+                        logger.error(f"[Test {test_num}/{num_requests}] Received unexpected result type from task: {type(result)} - {result}")
+                        failure_count += 1
+                        failed_pairs.append({"query": f"Task {test_num} (Query Unknown)", "response": f"Unexpected Result: {result}", "success": False})
 
+                # --- Print Summary Statistics ---
                 logger.info("--- E2E Test Run Summary ---")
                 logger.info(f"Total Requests: {num_requests}")
                 logger.info(f"Successful Requests: {success_count}")
                 logger.info(f"Failed Requests: {failure_count}")
                 logger.info("-----------------------------")
+
+                # --- Print Successful Pairs --- 
+                if successful_pairs:
+                    print("\n--- Successful Request/Response Pairs ---")
+                    for i, pair in enumerate(successful_pairs):
+                        print(f"\n[{i+1}/{success_count}] Request:")
+                        print(f"  {pair['query']}")
+                        print(f"  Response:")
+                        # Indent multi-line responses
+                        indented_response = '\n  '.join(pair['response'].splitlines())
+                        print(f"  {indented_response}")
+                    print("-------------------------------------------")
+                
+                # --- Print Failed Pairs/Errors ---
+                if failed_pairs:
+                    print("\n--- Failed Requests/Errors ---")
+                    for i, pair in enumerate(failed_pairs):
+                        print(f"\n[{i+1}/{failure_count}] Failed Request:")
+                        print(f"  {pair['query']}")
+                        print(f"  Failure Reason/Response:")
+                        indented_response = '\n  '.join(str(pair['response']).splitlines())
+                        print(f"  {indented_response}")
+                    print("-----------------------------")
 
                 if failure_count > 0:
                     logger.warning("Some E2E tests failed or encountered errors.")
