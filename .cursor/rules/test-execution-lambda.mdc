@@ -1,0 +1,45 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Lambda Test Execution Guide
+
+## Overview
+
+Lambda function tests are located in `tests/lambda/` and are executed using the `[tests/run_tests.py](mdc:tests/run_tests.py)` script. This script uses `unittest.loader.discover` to find tests matching patterns like `test_math_*.py` or `test_weather_*.py`.
+
+## Running Tests
+
+Tests can be run individually or together:
+```bash
+cd tests
+poetry run python run_tests.py --math   # Run only math tests
+poetry run python run_tests.py --weather # Run only weather tests
+poetry run python run_tests.py --all     # Run math then weather tests
+cd ..
+```
+
+## Key Files
+
+*   `[tests/run_tests.py](mdc:tests/run_tests.py)`: The main test runner script.
+*   `[tests/lambda/test_math_lambda.py](mdc:tests/lambda/test_math_lambda.py)`: Tests for the math lambda.
+*   `[tests/lambda/test_weather_lambda.py](mdc:tests/lambda/test_weather_lambda.py)`: Tests for the weather lambda.
+*   `[lambda/math/app.py](mdc:lambda/math/app.py)`: Source code for the math lambda handler.
+*   `[lambda/weather/app.py](mdc:lambda/weather/app.py)`: Source code for the weather lambda handler.
+
+## Known Issues & Bug Fix Context: Module Import Conflicts
+
+**Problem:** When running tests using `--all`, the second suite of tests (weather) often fails because it incorrectly imports the `lambda_handler` from the *first* suite's `app.py` (math).
+
+**Cause:**
+1.  Both `lambda/math/app.py` and `lambda/weather/app.py` define resources like `lambda_handler`.
+2.  The corresponding test files (`test_math_lambda.py`, `test_weather_lambda.py`) need to modify `sys.path` at runtime to locate their respective `app.py` files (e.g., `sys.path.append('../../lambda/math')`).
+3.  The test runner (`run_tests.py`) executes suites sequentially. Despite attempts to clear `sys.modules` between runs (see the generic clearing loop in `run_tests`), the path manipulation and shared `app.py` name cause Python's import resolution to pick the wrong module for the second test suite.
+
+**Troubleshooting History:** Various attempts were made involving `sys.modules` clearing (both specific and generic) and modifying `sys.path` within `run_tests.py`, but the conflict persists.
+
+**Potential Solutions (to consider when fixing):**
+*   **Rename `app.py`:** Rename `lambda/math/app.py` and `lambda/weather/app.py` to unique names (e.g., `math_lambda.py`, `weather_lambda.py`) and update the `from ... import lambda_handler` statements in the corresponding test files.
+*   **Python Packaging:** Convert `lambda/math` and `lambda/weather` into proper Python packages by adding `__init__.py` files. This might allow for more reliable relative or absolute imports.
+*   **Process Isolation:** Modify `run_tests.py` to run `poetry run python -m unittest discover -s tests/lambda -p test_math_*.py` and `poetry run python -m unittest discover -s tests/lambda -p test_weather_*.py` in separate subprocesses, ensuring complete isolation.

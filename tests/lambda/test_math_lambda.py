@@ -3,6 +3,10 @@ import unittest
 import sys
 import os
 
+# Add lambda directory to path for imports -> REMOVED
+# sys.path.append(os.path.join(os.path.dirname(__file__), '../../lambda/math'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../lambda/math')) # Re-added
+
 from app import lambda_handler
 
 class TestMathLambda(unittest.TestCase):

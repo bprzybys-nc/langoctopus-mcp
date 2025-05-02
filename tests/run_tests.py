@@ -5,6 +5,7 @@ import unittest
 import logging
 import argparse
 import importlib
+import subprocess
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -16,6 +17,8 @@ def run_tests(pattern):
     """
     Run tests matching the given pattern
     """
+    # Define project_root early for use within the function
+    project_root = os.path.dirname(os.path.abspath(__file__))
     logger.info(f"Running tests in tests/lambda matching {pattern}...")
     
     # Reset sys.modules
@@ -24,14 +27,14 @@ def run_tests(pattern):
         if mod.startswith('app') or mod.startswith('lambda.') or mod.startswith('tests.lambda.'):
             modules_to_remove.append(mod)
     
-    # # Commented out the generic removal for now to rely on specific reload/clear
-    # for mod in modules_to_remove:
-    #     logger.debug(f"Removing module {mod} from sys.modules")
-    #     if mod in sys.modules: # Check if it exists before deleting
-    #         del sys.modules[mod]
+    # # Commented out the generic removal for now to rely on specific reload/clear -> UNCOMMENTING
+    for mod in modules_to_remove:
+        logger.debug(f"Removing module {mod} from sys.modules")
+        if mod in sys.modules: # Check if it exists before deleting
+            del sys.modules[mod]
 
-    # Add all lambda directories to path
-    project_root = os.path.dirname(os.path.abspath(__file__))
+    # Add all lambda directories to path -> KEEP REMOVED
+    # project_root = os.path.dirname(os.path.abspath(__file__))
     lambda_dirs = [
         os.path.join(project_root, 'lambda', d) 
         for d in os.listdir(os.path.join(project_root, 'lambda'))
@@ -45,7 +48,7 @@ def run_tests(pattern):
     
     # Discover and run tests using discover consistently
     loader = unittest.TestLoader()
-    suite = loader.discover('tests/lambda', pattern=pattern)
+    suite = loader.discover('lambda', pattern=pattern)
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)
     
@@ -55,14 +58,6 @@ def run_tests(pattern):
     
     logger.info(f"All tests matching '{pattern}' passed!")
     return True
-
-def clear_math_module():
-    """Specifically removes the math lambda module from cache."""
-    modules_to_clear = ['lambda.math.app', 'app'] # Also clear plain 'app'
-    for module_name in modules_to_clear:
-        if module_name in sys.modules:
-            logger.debug(f"Specifically removing module {module_name} from sys.modules")
-            del sys.modules[module_name]
 
 def main():
     """
@@ -77,50 +72,61 @@ def main():
     args = parser.parse_args()
     
     # Ensure lambda path is added early
-    project_root = os.path.dirname(os.path.abspath(__file__))
-    math_lambda_path = os.path.join(project_root, 'lambda', 'math')
-    if math_lambda_path not in sys.path:
-        logger.debug(f"Adding {math_lambda_path} to sys.path for main")
-        sys.path.insert(0, math_lambda_path)
+    # project_root = os.path.dirname(os.path.abspath(__file__))
+    # math_lambda_path = os.path.join(project_root, 'lambda', 'math')
+    # weather_lambda_path = os.path.join(project_root, 'lambda', 'weather')
+    # if math_lambda_path not in sys.path:
+    #     logger.debug(f"Adding {math_lambda_path} to sys.path for main")
+    #     sys.path.insert(0, math_lambda_path)
+
+    # exit_code = 1 # Default to failure
 
     if args.math:
-        clear_math_module()
-        # Explicitly reload app before running math tests
-        try:
-            import app # Ensure app is loaded if not already
-            importlib.reload(app)
-            logger.info("Reloaded 'app' module for math tests.")
-        except ImportError:
-            logger.error("Could not import 'app' to reload for math tests.")
-        except KeyError:
-            logger.warning("'app' module not in sys.modules, cannot reload.") # Should not happen if imported
-        return 0 if run_tests('test_math_*.py') else 1
+        # clear_math_module() # Keep clear -> REMOVE CALL
+        return 0 if run_tests('test_math_*.py') else 1 # Simplified return
+
     elif args.weather:
-        # Clear math module even when running only weather tests, just in case
-        clear_math_module()
-        return 0 if run_tests('test_weather_*.py') else 1
+        # clear_math_module() # Keep clear -> REMOVE CALL
+        return 0 if run_tests('test_weather_*.py') else 1 # Simplified return
+
     elif args.all:
         success = True
-        clear_math_module()
-        # Explicitly reload app before running math tests
-        try:
-            import app # Ensure app is loaded if not already
-            importlib.reload(app)
-            logger.info("Reloaded 'app' module for math tests run in --all.")
-        except ImportError:
-            logger.error("Could not import 'app' to reload for math tests.")
-        except KeyError:
-            logger.warning("'app' module not in sys.modules, cannot reload.") # Should not happen if imported
-            
-        if not run_tests('test_math_*.py'):
-            success = False
-            
-        # Clear math module again before weather tests, just to be safe
-        clear_math_module() 
+        logger.info("Running ALL tests sequentially in separate processes...")
         
-        if not run_tests('test_weather_*.py'):
+        # Run Math tests in a subprocess
+        logger.info("Running Math tests...")
+        math_command = [sys.executable, __file__, "--math"]
+        math_result = subprocess.run(math_command, capture_output=True, text=True, check=False) # Don't check=True, handle exit code manually
+        print("--- Math Test Output ---")
+        print(math_result.stdout)
+        print(math_result.stderr)
+        print("-----------------------")
+        if math_result.returncode != 0:
+            logger.error("Math tests failed.")
             success = False
+        else:
+            logger.info("Math tests passed.")
+            
+        # Run Weather tests in a subprocess
+        logger.info("Running Weather tests...")
+        weather_command = [sys.executable, __file__, "--weather"]
+        weather_result = subprocess.run(weather_command, capture_output=True, text=True, check=False)
+        print("--- Weather Test Output ---")
+        print(weather_result.stdout)
+        print(weather_result.stderr)
+        print("-------------------------")
+        if weather_result.returncode != 0:
+            logger.error("Weather tests failed.")
+            success = False
+        else:
+             logger.info("Weather tests passed.")
+        
         return 0 if success else 1
+        # exit_code = 0 if success else 1
+
+    # return exit_code
 
 if __name__ == '__main__':
-    sys.exit(main()) 
+    # Need to get the exit code from main()
+    final_exit_code = main()
+    sys.exit(final_exit_code) 
