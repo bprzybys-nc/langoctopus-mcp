@@ -1,0 +1,38 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Frontend Architecture
+
+The frontend is a React application with a retro-style UI featuring robot avatars and a chat interface for interacting with the MCP agent.
+
+## Main Components
+
+- [frontend/src/components/App.jsx](mdc:frontend/src/components/App.jsx) - Main application component that orchestrates the chat interface
+- [frontend/src/components/ChatHistory.jsx](mdc:frontend/src/components/ChatHistory.jsx) - Component for displaying the chat history
+- [frontend/src/components/LeftRobot.jsx](mdc:frontend/src/components/LeftRobot.jsx) - Component for the questioner robot avatar
+- [frontend/src/components/RightRobot.jsx](mdc:frontend/src/components/RightRobot.jsx) - Component for the answerer robot avatar
+
+## Entry Point
+
+- [frontend/src/index.js](mdc:frontend/src/index.js) - Main entry point for the React application
+
+## Services
+
+The frontend/src/services directory contains utility services for:
+- API communication
+- Socket.IO integration
+- State management
+
+## Styling
+
+The application uses a retro-style design with custom CSS for the robot avatars and chat interface, found in the [frontend/src/styles](mdc:frontend/src/styles) directory.
+
+## Configuration
+
+- [frontend/package.json](mdc:frontend/package.json) - Package configuration and dependencies
+
+## Planning
+
+- [frontend-plan.md](mdc:frontend-plan.md) - Design and implementation plan for the frontend

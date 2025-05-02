@@ -76,4 +76,7 @@ tmp/
 .cursor/logs/
 
 # Trash directory
-trash/ 
+trash/
+
+# Excluded rules
+excluded/ 

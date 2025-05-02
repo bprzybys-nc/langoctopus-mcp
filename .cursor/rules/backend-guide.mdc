@@ -1,0 +1,32 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Backend Architecture
+
+The backend system is built using Flask with Socket.IO integration to provide real-time communication between the frontend and the LangGraph MCP agent.
+
+## Main Components
+
+- [backend/app.py](mdc:backend/app.py) - Core Flask application with Socket.IO setup
+- [client.py](mdc:client.py) - Client utility for connecting to the backend
+- [lambda_client.py](mdc:lambda_client.py) - Lambda client implementation
+- [lambda_client_adapter.py](mdc:lambda_client_adapter.py) - Adapter for the lambda client
+
+## Agent Implementation
+
+- [src/agent/client.py](mdc:src/agent/client.py) - MCP agent client implementation
+
+## MCP Servers
+
+- [src/mcp_servers/math_server.py](mdc:src/mcp_servers/math_server.py) - Server for handling math queries
+- [src/mcp_servers/weather_server.py](mdc:src/mcp_servers/weather_server.py) - Server for handling weather queries
+
+## Key Dependencies
+
+The backend requires the following key packages:
+- Flask
+- Flask-SocketIO
+- LangGraph
+- Other dependencies listed in [requirements.txt](mdc:requirements.txt)

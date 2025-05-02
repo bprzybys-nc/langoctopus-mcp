@@ -1,0 +1,36 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Project Overview
+
+LangOctopus MCP is a retro-style chat interface for interacting with a LangGraph MCP agent.
+
+## Core Components
+
+- **Backend**: Flask server with Socket.IO integration that connects to the LangGraph MCP agent
+  - Main entrypoint: [backend/app.py](mdc:backend/app.py)
+  
+- **Frontend**: React application with a retro-style UI featuring robot avatars and chat interface
+  - Main component: [frontend/src/components/App.jsx](mdc:frontend/src/components/App.jsx)
+  - Chat components: 
+    - [frontend/src/components/ChatHistory.jsx](mdc:frontend/src/components/ChatHistory.jsx)
+    - [frontend/src/components/LeftRobot.jsx](mdc:frontend/src/components/LeftRobot.jsx)
+    - [frontend/src/components/RightRobot.jsx](mdc:frontend/src/components/RightRobot.jsx)
+
+- **Agent**: LangGraph MCP agent that can answer math and weather questions
+  - Agent client: [src/agent/client.py](mdc:src/agent/client.py)
+  - MCP Servers:
+    - [src/mcp_servers/math_server.py](mdc:src/mcp_servers/math_server.py)
+    - [src/mcp_servers/weather_server.py](mdc:src/mcp_servers/weather_server.py)
+
+## Running the Application
+
+- [run_ui.sh](mdc:run_ui.sh) - Script to run the frontend and backend servers
+- [run.py](mdc:run.py) - Main runner script
+
+## Testing
+
+- [run_tests.py](mdc:run_tests.py) - Test runner script
+- [test_queries.py](mdc:test_queries.py) - Sample test queries

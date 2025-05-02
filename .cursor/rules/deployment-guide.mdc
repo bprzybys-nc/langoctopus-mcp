@@ -1,0 +1,47 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Deployment and Setup Guide
+
+This guide details how to set up, run, and deploy the LangOctopus MCP application.
+
+## Local Setup
+
+### Prerequisites
+- Python 3.8+
+- Node.js 14+
+- npm or yarn
+
+### Environment Setup
+- [env.example](mdc:env.example) - Example environment variables file that should be copied to `.env`
+- [requirements.txt](mdc:requirements.txt) - Python dependencies
+
+## Running the Application
+
+- [run_ui.sh](mdc:run_ui.sh) - Script to run both frontend and backend servers
+  - Checks if required ports (3001, 5001) are available
+  - Installs dependencies if needed
+  - Starts the Flask backend server
+  - Starts the React frontend server
+
+- [run.py](mdc:run.py) - Main runner script for the application
+
+## AWS Lambda Deployment
+
+The application can be deployed to AWS Lambda:
+
+- [lambda/](mdc:lambda/) directory contains AWS Lambda specific code
+- [.aws-sam/](mdc:.aws-sam/) directory contains AWS SAM deployment templates
+- [lambda_client.py](mdc:lambda_client.py) - Client for interacting with Lambda functions
+- [lambda_client_adapter.py](mdc:lambda_client_adapter.py) - Adapter for the Lambda client
+
+## Testing
+
+- [run_tests.py](mdc:run_tests.py) - Script to run tests
+- [test_queries.py](mdc:test_queries.py) - Sample test queries
+
+## Configuration
+
+- [config/](mdc:config/) directory contains configuration files for different environments

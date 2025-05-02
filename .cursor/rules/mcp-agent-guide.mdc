@@ -1,0 +1,34 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# MCP Agent Architecture
+
+The Multi-tool Conversational Program (MCP) agent is based on LangGraph and handles specialized queries through dedicated servers.
+
+## Agent Components
+
+- [src/agent/client.py](mdc:src/agent/client.py) - MCP agent client implementation
+
+## MCP Servers
+
+The MCP architecture uses specialized servers for different query types:
+
+- [src/mcp_servers/math_server.py](mdc:src/mcp_servers/math_server.py) - Server for handling mathematical calculations
+- [src/mcp_servers/weather_server.py](mdc:src/mcp_servers/weather_server.py) - Server for handling weather-related queries
+
+## Client Implementations
+
+- [client.py](mdc:client.py) - Standard client for local usage
+- [lambda_client.py](mdc:lambda_client.py) - Client implementation for AWS Lambda
+- [lambda_client_adapter.py](mdc:lambda_client_adapter.py) - Adapter layer for the Lambda client
+
+## Testing
+
+- [test_queries.py](mdc:test_queries.py) - Sample test queries for the MCP agent
+- [run_tests.py](mdc:run_tests.py) - Script to run tests against the MCP agent
+
+## Integration with Frontend
+
+The MCP agent receives queries via the Flask backend which uses Socket.IO to communicate with the frontend application.
