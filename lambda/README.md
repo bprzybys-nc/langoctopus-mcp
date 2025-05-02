@@ -82,4 +82,17 @@ When ready to implement SAML authentication:
 1. Uncomment the `SamlAuthorizer` section in `template.yaml`
 2. Create the authorizer implementation in `lambda/authorizer/`
 3. Update the API Gateway `Auth` configuration to use the authorizer
-4. Set the appropriate environment variables for the SAML identity provider 
+4. Set the appropriate environment variables for the SAML identity provider
+
+### Running the Agent with Lambda Backend
+
+1.  **Set Environment Variables:** Ensure your `GOOGLE_API_KEY` and `API_GATEWAY_URL` (pointing to your deployed API Gateway stage) are set in your environment or a `.env` file.
+
+2.  **Run the Client:**
+    ```bash
+    # Navigate to the lambda directory if you are not already there
+    # cd lambda 
+    poetry run python client.py 
+    ```
+
+This will start the agent, which will use the `LambdaMcpAdapter` (defined in `client_adapter.py`) to communicate with your deployed Lambda functions via the API Gateway URL. 

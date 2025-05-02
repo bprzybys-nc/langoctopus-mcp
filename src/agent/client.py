@@ -19,7 +19,7 @@ async def main(user_query=None):
     async with MultiServerMCPClient({
         "math": {
             "command": "python",
-            "args": ["math_server.py"],
+            "args": ["src/mcp_servers/math_server.py"],
             "transport": "stdio"
         },
         "weather": {

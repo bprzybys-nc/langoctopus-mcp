@@ -107,4 +107,7 @@ samconfig.toml
 *~
 
 # Local testing
-htmlcov/ 
+htmlcov/
+
+# Poetry
+.poetry/ 

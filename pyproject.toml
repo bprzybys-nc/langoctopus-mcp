@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "langoctopus-mcp"
+version = "0.1.0"
+description = "LangOctopus MCP Project - LangGraph agent with retro UI"
+authors = ["Your Name <you@example.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+langchain-mcp-adapters = "==0.0.9"
+langgraph = "==0.4.0"
+google-generativeai = "==0.8.5"
+python-dotenv = "==1.0.0"
+mcp = "==1.4.1"
+langchain-google-genai = "==2.0.10"
+requests = ">=2.31.0"
+aws-sam-cli = ">=1.82.0"
+boto3 = ">=1.28.0"
+langchain = "==0.3.24"
+langchain-core = "==0.3.56"
+flask = "==2.3.2"
+flask-socketio = "==5.3.4"
+flask-cors = "==4.0.0"
+eventlet = "==0.33.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api" 

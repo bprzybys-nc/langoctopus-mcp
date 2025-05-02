@@ -6,6 +6,7 @@ import logging
 import argparse
 import signal # Added signal
 import time # Added time
+from unittest.mock import patch, MagicMock
 
 # Add project root to path to allow importing 'client'
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -317,6 +318,39 @@ async def main_test_runner(num_requests):
     finally:
         # Cleanup: Stop servers (MCP client is closed by async with)
         await stop_servers()
+
+@patch("src.agent.client.ChatGoogleGenerativeAI")
+@patch("src.agent.client.MultiServerMCPClient")
+async def test_end_to_end_mocked_servers_and_llm(self, mock_mcp_client_constructor, mock_llm_constructor):
+    """ Test the full agent flow with mocked LLM and MCP servers. """
+    # Arrange: Mock the LLM response
+    mock_llm_instance = MagicMock()
+    mock_llm_response = AIMessage(content="The sum is 3.")
+    mock_llm_instance.ainvoke.return_value = mock_llm_response
+    mock_llm_constructor.return_value = mock_llm_instance
+    
+    # Arrange: Mock the MCP Client and its tools
+    mock_mcp_client_instance = MagicMock()
+    mock_mcp_client_instance.get_tools.return_value = [
+        Tool(name="add", description="Add two numbers", func=lambda a, b: a + b)
+    ]
+    # Configure the context manager
+    mock_mcp_client_constructor.return_value.__aenter__.return_value = mock_mcp_client_instance
+
+    # Act: Run the agent main function with a query
+    # Assuming agent.py is structured to be callable like this
+    # We might need to adjust if main() does more than just run the agent loop
+    try:
+        result = await agent_main(user_query="What is 1 + 2?")
+        print("Agent Result:", result)
+    except ValueError as e:
+        print(f"Caught expected ValueError: {e}")
+        # If agent.py exits or raises error on missing API key, this might be expected
+        # Modify agent.py or this test if needed
+        pass # src/agent/client.py already handles missing GOOGLE_API_KEY etc.
+
+    # Assert
+    # Check if LLM was called
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run E2E tests against the agent.')

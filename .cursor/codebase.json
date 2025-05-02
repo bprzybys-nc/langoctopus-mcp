@@ -12,21 +12,21 @@
           "children": [
             {
               "file": "client.py",
-              "description": "LangGraph agent implementation with Gemini 2.5 Flash"
+              "description": "LangGraph agent implementation (uses local MCP servers)"
             }
           ]
         },
         {
           "directory": "mcp_servers",
-          "description": "MCP server implementations",
+          "description": "Local MCP server implementations",
           "children": [
             {
               "file": "math_server.py",
-              "description": "MCP server for math operations"
+              "description": "MCP server for math operations (local)"
             },
             {
               "file": "weather_server.py",
-              "description": "MCP server for weather information"
+              "description": "MCP server for weather information (local)"
             }
           ]
         },
@@ -118,7 +118,11 @@
         },
         {
           "file": "package.json",
-          "description": "Frontend dependencies and scripts"
+          "description": "Frontend dependencies and scripts (npm)"
+        },
+        {
+          "file": "package-lock.json",
+          "description": "npm lock file for frontend dependencies"
         }
       ]
     },
@@ -129,32 +133,99 @@
         {
           "file": "app.py",
           "description": "Flask server with Socket.IO integration"
-        },
-        {
-          "file": "requirements.txt",
-          "description": "Backend dependencies"
         }
       ]
     },
     {
+      "directory": "lambda",
+      "description": "AWS SAM application for deploying MCP servers as Lambda functions",
+      "children": [
+        {
+          "directory": "math",
+          "description": "Lambda function for math MCP server"
+        },
+        {
+          "directory": "weather",
+          "description": "Lambda function for weather MCP server"
+        },
+        {
+          "directory": "authorizer",
+          "description": "Lambda authorizer implementation (optional)"
+        },
+        {
+          "file": "client.py",
+          "description": "Agent entrypoint using Lambda backend"
+        },
+        {
+          "file": "client_adapter.py",
+          "description": "Adapter for communicating with Lambda MCP services"
+        },
+        {
+          "file": "README.md",
+          "description": "Instructions for deploying and using the Lambda setup"
+        }
+      ]
+    },
+    {
+      "directory": "scripts",
+      "description": "Utility scripts",
+      "children": [
+        {
+          "file": "run_ui.sh",
+          "description": "Script to run the frontend and backend UI servers"
+        }
+      ]
+    },
+    {
+      "directory": "tests",
+      "description": "Test suite",
+      "children": [
+        {
+          "file": "run_tests.py",
+          "description": "Script to execute tests"
+        }
+      ]
+    },
+    {
+      "directory": "config",
+      "description": "Configuration files (if any)"
+    },
+    {
+      "directory": "doc",
+      "description": "Project documentation"
+    },
+    {
       "file": "run.py",
-      "description": "Script to orchestrate starting servers and running the agent"
+      "description": "Script to orchestrate starting local servers and running the main agent"
     },
     {
       "file": "test_queries.py",
       "description": "Test script with example agent queries"
     },
     {
-      "file": "requirements.txt",
-      "description": "Project dependencies"
+      "file": "pyproject.toml",
+      "description": "Project metadata and Python dependencies (Poetry)"
+    },
+    {
+      "file": "poetry.lock",
+      "description": "Poetry lock file for Python dependencies"
     },
     {
       "file": "README.md",
       "description": "Project documentation"
     },
     {
+      "file": ".env.example",
+      "description": "Example environment variables for API keys etc."
+    },
+    {
       "file": ".env",
-      "description": "Environment variables for API keys",
+      "description": "Environment variables (excluded from git)",
+      "excluded": true
+    },
+    {
+      "directory": "trash",
+      "description": "Directory for obsolete/deleted files (excluded)",
       "excluded": true
     }
   ]
