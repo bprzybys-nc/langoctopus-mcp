@@ -108,5 +108,19 @@ alwaysApply: false
 - Chat history is displayed in reverse chronological order (older messages at top)
 - Uses WebSockets for real-time communication with the backend
 
+## Retro Robot Chat Architecture
+- The app is organized into three main components:
+  - LeftRobot: Renders the left robot avatar that asks questions
+  - ChatHistory: Displays conversation history in reverse chronological order
+  - RightRobot: Renders the right robot avatar that answers questions
+- Socket.IO is used for real-time communication with the backend
+- The App component manages state and coordinates interactions
+- The retro styling is achieved with CSS variables and animations
+
+## Service Locations
+- Frontend development server: http://localhost:3000
+- Backend API: http://localhost:5000
+- Socket.IO connection: ws://localhost:5000/socket.io
+
 
 

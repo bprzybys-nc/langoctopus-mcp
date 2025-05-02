@@ -1,0 +1,97 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Socket.IO Rules
+
+## Core Principles
+- Socket.IO enables real-time, bidirectional communication between clients and server
+- Uses WebSockets with fallbacks for older browsers
+- Supports event-based messaging pattern
+- Designed for reliability and auto-reconnection
+- Provides additional features over raw WebSockets (rooms, namespaces, etc.)
+
+## Server-Side Rules
+- Install with `npm install socket.io` or `yarn add socket.io`
+- Create server instance by attaching to HTTP server
+- Listen for 'connection' events to handle new clients
+- Emit events with `emit()` to send data to clients
+- Broadcast to multiple clients with `io.emit()`
+- Use namespaces for logical separation of concerns
+- Implement rooms for group messaging
+
+## Client-Side Rules
+- Import client in browser via `<script src="/socket.io/socket.io.js"></script>` or ESM
+- Connect with `io()` or `io(url, options)`
+- Handle connection/disconnection events
+- Send data to server with `socket.emit()`
+- Listen for server events with `socket.on()`
+- Implement acknowledgements for reliable delivery
+- Handle reconnection situations appropriately
+
+## Authentication
+- Use middleware for connection authentication
+- Implement JWT or other token authentication for secure connections
+- Consider custom authorization strategies for namespaces or rooms
+- Use `socket.disconnect()` to terminate unauthorized connections
+
+## Event Handling
+- Create clear, consistent event naming conventions
+- Listen for events with `socket.on('eventName', callback)`
+- Send events with `socket.emit('eventName', data)`
+- Use acknowledgements for request-response patterns
+- Implement error handling for all event callbacks
+
+## Performance Optimization
+- Use binary data transmission for large payloads
+- Implement throttling or rate limiting for high-frequency events
+- Consider batching multiple small messages together
+- Use compression when appropriate
+
+## Rooms and Namespaces
+- Organize clients into rooms with `socket.join('room')`
+- Remove clients from rooms with `socket.leave('room')`
+- Send messages to rooms with `io.to('room').emit()`
+- Create namespaces with `io.of('/namespace')`
+
+## Scaling
+- Use Redis adapter for multi-server deployments
+- Implement appropriate CORS configuration
+- Consider using Socket.IO Cluster for horizontal scaling
+- Use load balancing with sticky sessions
+
+## Security
+- Validate all incoming data from clients
+- Implement rate limiting to prevent DoS attacks
+- Configure CORS restrictions appropriately
+- Use HTTPS for production deployments
+
+## Error Handling
+- Implement global error handlers
+- Handle disconnection events gracefully
+- Log errors for debugging and monitoring
+- Provide appropriate error feedback to clients
+
+## Best Practices
+- Keep event payloads small and efficient
+- Implement proper cleanup on disconnection
+- Use acknowledgements for critical operations
+- Structure code with clear separation of concerns
+- Document all events and expected payloads
+
+## Integration with Frameworks
+- Express: Create server with `http.createServer(app)` then attach Socket.IO
+- Koa: Use `app.callback()` with HTTP server then attach Socket.IO
+- Flask: Use Flask-SocketIO extension for Python integration
+
+## Frontend Integration
+- React: Use useEffect for Socket.IO setup and cleanup
+- Angular: Create service for Socket.IO management
+- Vue: Use lifecycle hooks for Socket.IO initialization
+
+## Testing
+- Mock Socket.IO server/client for unit testing
+- Implement integration tests with actual Socket.IO instances
+- Test reconnection scenarios and error handling
+- Verify room and namespace functionality

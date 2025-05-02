@@ -124,3 +124,9 @@ alwaysApply: false
 - Integrates with the existing agent code to process queries
 - Provides sample data endpoints for testing without the full agent
 
+## Service Locations
+- Development Backend API: http://localhost:5000
+- Development Frontend UI: http://localhost:3000
+- WebSocket Connection: ws://localhost:5000/socket.io
+- API Documentation: http://localhost:5000/api/docs
+

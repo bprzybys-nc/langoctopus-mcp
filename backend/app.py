@@ -1,11 +1,37 @@
 import os
 import sys
 import asyncio
+import argparse
+import socket
 from flask import Flask, request, jsonify, send_from_directory
 from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 import time
 from threading import Thread
+
+# Parse command line arguments
+parser = argparse.ArgumentParser(description='Start the Flask backend server')
+parser.add_argument('--port', type=int, default=5001, help='Port to run the server on')
+args = parser.parse_args()
+
+# Function to check if port is available
+def is_port_in_use(port):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        return s.connect_ex(('localhost', port)) == 0
+
+# If port is in use, try to find an available port
+port = args.port
+if is_port_in_use(port):
+    print(f"Warning: Port {port} is already in use.")
+    # Try to find an available port in the range [port, port+100]
+    for p in range(port, port+100):
+        if not is_port_in_use(p):
+            port = p
+            print(f"Using alternative port: {port}")
+            break
+    else:
+        print(f"Error: Could not find an available port in range {port}-{port+100}")
+        sys.exit(1)
 
 # Add project root to path to allow importing from src
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -15,7 +41,7 @@ if project_root not in sys.path:
 # Set up Flask app with Socket.IO
 app = Flask(__name__, static_folder='../frontend/build')
 CORS(app)
-socketio = SocketIO(app, cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')
 
 # Sample test queries from tests/test_queries.py
 test_queries = [
@@ -98,6 +124,11 @@ def get_sample_questions():
     """Return the list of sample questions."""
     return jsonify(test_queries)
 
+@app.route('/api/health')
+def health_check():
+    """Health check endpoint."""
+    return jsonify({'status': 'ok', 'port': port})
+
 @app.route('/api/ask', methods=['POST'])
 def ask():
     """Process a question through the agent."""
@@ -136,6 +167,10 @@ def handle_message(data):
         thread.start()
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
+    # Use the port determined above
     print(f"Starting server on port {port}...")
-    socketio.run(app, host='0.0.0.0', port=port, debug=True) 
+    try:
+        socketio.run(app, host='0.0.0.0', port=port, debug=True)
+    except Exception as e:
+        print(f"Error starting server: {e}")
+        sys.exit(1) 

@@ -1,76 +1,111 @@
-# LangGraph Agent with MCP Tools
+# LangOctopus MCP Project
 
-A minimalist, robust agent using LangGraph and MCP for a conversational agent that can perform calculations and retrieve weather information, with Gemini 2.5 Flash as the LLM.
+A retro-style chat interface for interacting with the LangGraph MCP agent.
 
-## Setup
+## Project Overview
 
-1. Install dependencies:
-   ```bash
+This project consists of:
+
+1. **Backend**: A Flask server with Socket.IO integration that connects to the LangGraph MCP agent.
+2. **Frontend**: A React application with a retro-style UI featuring robot avatars and a chat interface.
+3. **Agent**: The existing LangGraph MCP agent that can answer math and weather questions.
+
+## Directory Structure
+
+- `/src` - Core agent functionality
+  - `/agent` - LangGraph agent implementation
+  - `/mcp_servers` - MCP server implementations (math, weather)
+- `/frontend` - React-based retro-style UI
+- `/backend` - Flask server with Socket.IO integration
+- `/run.sh` - Script to run the agent servers
+- `/run_ui.sh` - Script to run the frontend and backend servers
+
+## Running the Application
+
+### Prerequisites
+
+- Python 3.8+
+- Node.js 14+
+- npm or yarn
+
+### Setup
+
+1. Clone the repository:
+   ```
+   git clone [repository_url]
+   cd langoctopus-mcp
+   ```
+
+2. Set up the Python environment:
+   ```
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
    pip install -r requirements.txt
    ```
 
-2. Create a `.env` file with your API keys:
+3. Install frontend dependencies:
    ```
-   GOOGLE_API_KEY=your_google_api_key
+   cd frontend
+   npm install
+   cd ..
    ```
 
-## Running the Agent
+### Running the UI
 
-Start the agent with:
-```bash
-python run.py
+To start both the frontend and backend servers:
+
+```
+./run_ui.sh
 ```
 
-This will:
-1. Start the MCP servers (math and weather)
-2. Initialize the LangGraph agent
-3. Provide an interactive prompt
+This script:
+- Checks if required ports (3001, 5001) are available
+- Installs dependencies if needed
+- Starts the backend Flask server on port 5001
+- Starts the frontend React server on port 3001
 
-Type `exit` to quit.
+### Accessing the Application
 
-## Lambda Implementation
+- Frontend UI: http://localhost:3001
+- Backend API: http://localhost:5001
+- API documentation: http://localhost:5001/api/docs (if available)
 
-The project now includes an AWS Lambda implementation of the MCP services:
+## Features
 
-- Math and Weather services as Lambda functions
-- API Gateway for accessing the Lambda functions
-- No authentication required (as per requirements)
+- Retro-style UI with custom robot avatars
+- Real-time communication using Socket.IO
+- Automated conversation flow (questions and answers)
+- Integration with the existing agent for math and weather questions
+- Responsive design with animations
 
-### Running Lambda Implementation Locally
+## Development
 
-Run the local Lambda environment with:
-```bash
-python run_lambda_local.py
-```
+### Backend
 
-This will start the SAM local API on port 3000 and test the endpoints.
+The backend is a Flask application with Socket.IO integration. It connects to the existing LangGraph MCP agent to process questions.
 
-In another terminal, run the Lambda-compatible client:
-```bash
-python lambda_client.py
-```
+Key files:
+- `backend/app.py` - Main Flask application with Socket.IO setup
 
-See `lambda/README.md` for more details.
+### Frontend
 
-## Testing
+The frontend is a React application with a retro-style UI.
 
-Run automated tests with:
-```bash
-python test_queries.py
-```
+Key components:
+- `App.jsx` - Main application component
+- `LeftRobot.jsx` - Left robot component (questioner)
+- `RightRobot.jsx` - Right robot component (answerer)
+- `ChatHistory.jsx` - Chat history display component
 
-## Project Structure
+### Adding Custom Questions
 
-- `math_server.py` - MCP server for math operations
-- `weather_server.py` - MCP server for weather information
-- `client.py` - LangGraph agent implementation
-- `run.py` - Script to start everything together
-- `test_queries.py` - Test script with example queries
+You can modify the `test_queries.py` file to add your own questions to the sample set.
 
-## Architecture
+## Troubleshooting
 
-The agent uses:
-- LangGraph for the agent workflow
-- Gemini 2.5 Flash as the LLM
-- MCP for tool integration
-- MultiServerMCPClient to connect to multiple MCP servers 
+- **Port conflicts**: The script will detect if ports 3001 or 5001 are already in use and will automatically kill the processes using them.
+- **Missing dependencies**: The script will attempt to install missing dependencies automatically.
+
+## License
+
+[Your license information here] 

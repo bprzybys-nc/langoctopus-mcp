@@ -102,6 +102,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px;
   position: relative;
   overflow: hidden;
+  padding-top: 44px; /* 32px status bar height + 12px padding */
 }
 
 /* Robot Containers */
@@ -143,50 +144,105 @@ h1, h2, h3, h4, h5, h6 {
 .chat-messages {
   display: flex;
   flex-direction: column-reverse;
+  gap: 16px;
   overflow-y: auto;
   padding: 1rem;
-  flex: 1;
+  height: calc(100vh - 220px);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Message Styles */
 .message {
-  margin-bottom: 1rem;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  max-width: 80%;
-  word-wrap: break-word;
+  display: grid;
+  grid-template-columns: 40px 1fr 80px;
+  align-items: start;
+  padding: 12px;
+  border-radius: 8px;
+  animation: glow 1.5s infinite alternate;
   position: relative;
-  border: 2px solid;
+  margin-bottom: 16px;
 }
 
-.message.left {
-  align-self: flex-start;
-  background-color: var(--primary);
-  border-color: var(--accent);
+.robot-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'VT323', monospace;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.message.right {
+.message-content {
+  padding: 8px 12px;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.message-time {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  opacity: 0.8;
+  text-align: right;
   align-self: flex-end;
-  background-color: var(--secondary);
-  border-color: var(--accent);
-  color: var(--dark-accent);
+}
+
+.robot-left {
+  background-color: rgba(0, 100, 255, 0.2);
+  border: 2px solid #00a8ff;
+  text-align: left;
+  margin-right: 60px;
+}
+
+.robot-left .robot-icon {
+  background-color: #00a8ff;
+  color: #000;
+}
+
+.robot-right {
+  background-color: rgba(255, 100, 0, 0.2);
+  border: 2px solid #ff6b00;
+  text-align: left;
+  margin-left: 60px;
+}
+
+.robot-right .robot-icon {
+  background-color: #ff6b00;
+  color: #000;
 }
 
 /* Typing Indicator */
 .typing-indicator {
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px 1fr 80px;
   align-items: center;
-  margin: 0.75rem 0;
+  padding: 12px;
+  border-radius: 8px;
+  margin-left: 60px;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
 }
 
 .typing-indicator span {
-  width: 8px;
-  height: 8px;
-  margin: 0 2px;
-  background-color: var(--text);
-  border-radius: 50%;
   display: inline-block;
-  animation: typing 1.5s infinite ease-in-out;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff6b00;
+  animation: typing 1s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
 }
 
 .typing-indicator span:nth-child(2) {
@@ -198,9 +254,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes typing {
-  0% { transform: translateY(0); }
-  25% { transform: translateY(-5px); }
-  50% { transform: translateY(0); }
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
 }
 
 /* Title and Header */
@@ -211,4 +272,51 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 2px solid var(--accent);
   margin-bottom: 1rem;
   text-shadow: 2px 2px var(--dark-accent);
+}
+
+/* Add these styles for the status bar */
+.status-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  color: #0f0;
+  font-family: 'VT323', monospace;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #0f0;
+  z-index: 1000;
+  text-shadow: 0 0 5px #0f0;
+  height: 32px;
+}
+
+.toggle-button, .reset-button {
+  background-color: #222;
+  color: #0f0;
+  border: 1px solid #0f0;
+  padding: 4px 12px;
+  margin: 0 8px;
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  text-shadow: 0 0 5px #0f0;
+  box-shadow: 0 0 5px #0f0;
+  transition: all 0.2s ease;
+}
+
+.toggle-button:hover, .reset-button:hover {
+  background-color: #0f0;
+  color: #000;
+  box-shadow: 0 0 10px #0f0;
+}
+
+.progress-indicator {
+  background-color: #111;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #0f0;
 } 

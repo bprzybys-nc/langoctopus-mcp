@@ -1,0 +1,131 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# SVG Rules
+
+## Core Principles
+- SVG (Scalable Vector Graphics) is an XML-based format for vector graphics
+- Vector-based graphics scale without losing resolution quality
+- Can be styled with CSS and manipulated with JavaScript
+- Integrates well with HTML for web applications
+- Supports animation and interactivity
+
+## Basic Structure
+- SVG documents start with the `<svg>` root element
+- Coordinate system starts at top-left (0,0) and extends right and down
+- Width and height attributes define the viewport size
+- viewBox attribute controls the coordinate system
+- preserveAspectRatio determines how SVG scales
+
+## Shape Elements
+- `<rect>` - Rectangles with x, y, width, height, rx, ry attributes
+- `<circle>` - Circles with cx, cy, r attributes
+- `<ellipse>` - Ellipses with cx, cy, rx, ry attributes
+- `<line>` - Lines with x1, y1, x2, y2 attributes
+- `<polyline>` - Connected lines with points attribute
+- `<polygon>` - Closed shapes with points attribute
+- `<path>` - Complex shapes using the d attribute
+
+## Path Syntax
+- M/m - moveto (absolute/relative)
+- L/l - lineto (absolute/relative)
+- H/h - horizontal lineto (absolute/relative)
+- V/v - vertical lineto (absolute/relative)
+- C/c - curveto (absolute/relative)
+- S/s - smooth curveto (absolute/relative)
+- Q/q - quadratic Bézier curve (absolute/relative)
+- T/t - smooth quadratic Bézier curve (absolute/relative)
+- A/a - elliptical arc (absolute/relative)
+- Z/z - closepath
+
+## Text Elements
+- `<text>` - Creates text elements
+- `<tspan>` - Sub-portions of text for styling
+- `<textPath>` - Text along a path
+- Attributes include x, y, dx, dy, rotate, textLength, lengthAdjust
+
+## Styling
+- Presentation attributes: fill, stroke, stroke-width
+- CSS styling via style attribute or external CSS
+- Classes and IDs for targeting elements
+- Inline styles take precedence over CSS
+- inherit keyword inherits parent's value
+
+## Transformations
+- transform attribute for geometric transformations
+- translate(x, y) - move elements
+- rotate(angle, [x, y]) - rotate elements
+- scale(x, [y]) - resize elements
+- skewX(angle) and skewY(angle) - skew elements
+- matrix(a, b, c, d, e, f) - custom transformation matrix
+
+## Grouping
+- `<g>` element groups related shapes
+- Transformations and styles on the group affect all children
+- Groups can be nested for complex structures
+- `<defs>` for defining reusable elements (not rendered directly)
+
+## Reusable Elements
+- `<symbol>` - Define reusable SVG elements
+- `<use>` - Reference and instantiate reusable elements
+- `<marker>` - Define markers for line endpoints
+- `<pattern>` - Define repeating patterns for fills
+- `<clipPath>` - Define clipping regions
+
+## Animation
+- SMIL-based animations with `<animate>`, `<animateTransform>`, `<animateMotion>`
+- CSS animations for simpler animations
+- JavaScript animations for complex interactions
+- requestAnimationFrame for smooth animations
+
+## Filters
+- `<filter>` - Container for filter effects
+- Filter primitives like feGaussianBlur, feColorMatrix, feBlend
+- Filter effects can be chained
+- Coordinate system defined by filterUnits and primitiveUnits
+
+## Gradients
+- `<linearGradient>` - Linear color transitions
+- `<radialGradient>` - Radial color transitions
+- `<stop>` elements define color stops
+- Attributes include gradientUnits, spreadMethod, gradientTransform
+
+## SVG in HTML
+- Inline SVG directly in HTML5 documents
+- `<img>` tag to embed external SVG files
+- CSS background-image for decorative SVG
+- Object or iframe for interactive external SVGs
+
+## Accessibility
+- Use title and desc elements for descriptions
+- Implement ARIA attributes where appropriate
+- Ensure sufficient color contrast
+- Provide text alternatives for complex graphics
+
+## Performance
+- Minimize path complexity and number of nodes
+- Use symbols and reuse elements with `<use>`
+- Apply CSS classes instead of inline styles
+- Optimize with tools like SVGO
+- Consider lazy loading for large or multiple SVGs
+
+## Browser Compatibility
+- Test across browsers for consistent rendering
+- Consider polyfills for older browsers
+- Be aware of mobile device limitations
+- Use feature detection when using advanced features
+
+## Animation Best Practices
+- Prefer CSS animations for simple transitions
+- Use requestAnimationFrame for JavaScript animations
+- Animate transform properties for better performance
+- Minimize DOM updates during animations
+- Consider reduced motion preferences
+
+## SVG Editors
+- Use dedicated SVG editors for complex graphics
+- Export optimized SVG from vector design tools
+- Clean up unnecessary attributes and metadata
+- Validate SVG markup for standards compliance

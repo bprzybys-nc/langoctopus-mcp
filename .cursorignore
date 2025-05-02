@@ -1,14 +1,69 @@
-# Build and cache
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 build/
+develop-eggs/
 dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
 *.egg-info/
-
-# Environment and secrets
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+.tox/
+.nox/
+.hypothesis/
 .env
-.venv/
+.venv
 env/
 venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnpm-debug.log
+.npm
+.yarn
+.pnp.*
+package-lock.json
+yarn.lock
+
+# Dependencies and large files
+frontend/node_modules/
+.venv/
+
+# Build directories
+frontend/build/
+frontend/dist/
+frontend/.cache/
+
+# Temporary files
+*.bak
+*.tmp
+*.temp
+.*.sw?
+
+# Editor files
+*.swp
+*.swo
+*~
+.DS_Store
 
 # Large files and data
 data/large/

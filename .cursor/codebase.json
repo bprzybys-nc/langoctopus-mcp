@@ -1,0 +1,161 @@
+{
+  "name": "LangOctopus MCP Project",
+  "description": "Defines the core structure of the LangGraph MCP agent project with retro-style UI",
+  "pattern": [
+    {
+      "directory": "src",
+      "description": "Source code for the core agent functionality",
+      "children": [
+        {
+          "directory": "agent",
+          "description": "LangGraph agent implementation",
+          "children": [
+            {
+              "file": "client.py",
+              "description": "LangGraph agent implementation with Gemini 2.5 Flash"
+            }
+          ]
+        },
+        {
+          "directory": "mcp_servers",
+          "description": "MCP server implementations",
+          "children": [
+            {
+              "file": "math_server.py",
+              "description": "MCP server for math operations"
+            },
+            {
+              "file": "weather_server.py",
+              "description": "MCP server for weather information"
+            }
+          ]
+        },
+        {
+          "directory": "utils",
+          "description": "Utility functions and helpers"
+        }
+      ]
+    },
+    {
+      "directory": "frontend",
+      "description": "React-based retro-style user interface",
+      "children": [
+        {
+          "directory": "public",
+          "description": "Static assets and HTML template",
+          "children": [
+            {
+              "file": "index.html",
+              "description": "Main HTML template"
+            },
+            {
+              "directory": "assets",
+              "description": "Static assets like SVG robots",
+              "children": [
+                {
+                  "file": "robot-left.svg",
+                  "description": "Left robot SVG avatar"
+                },
+                {
+                  "file": "robot-right.svg",
+                  "description": "Right robot SVG avatar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "directory": "src",
+          "description": "React application source code",
+          "children": [
+            {
+              "directory": "components",
+              "description": "React components",
+              "children": [
+                {
+                  "file": "App.jsx",
+                  "description": "Main application component"
+                },
+                {
+                  "file": "ChatHistory.jsx",
+                  "description": "Chat history display component"
+                },
+                {
+                  "file": "LeftRobot.jsx",
+                  "description": "Left robot component"
+                },
+                {
+                  "file": "RightRobot.jsx",
+                  "description": "Right robot component"
+                }
+              ]
+            },
+            {
+              "directory": "styles",
+              "description": "CSS styles",
+              "children": [
+                {
+                  "file": "retro.css",
+                  "description": "Retro-style CSS for the application"
+                }
+              ]
+            },
+            {
+              "directory": "services",
+              "description": "API services",
+              "children": [
+                {
+                  "file": "api.js",
+                  "description": "API service for communicating with the backend"
+                }
+              ]
+            },
+            {
+              "file": "index.js",
+              "description": "Application entry point"
+            }
+          ]
+        },
+        {
+          "file": "package.json",
+          "description": "Frontend dependencies and scripts"
+        }
+      ]
+    },
+    {
+      "directory": "backend",
+      "description": "Flask backend server for the UI",
+      "children": [
+        {
+          "file": "app.py",
+          "description": "Flask server with Socket.IO integration"
+        },
+        {
+          "file": "requirements.txt",
+          "description": "Backend dependencies"
+        }
+      ]
+    },
+    {
+      "file": "run.py",
+      "description": "Script to orchestrate starting servers and running the agent"
+    },
+    {
+      "file": "test_queries.py",
+      "description": "Test script with example agent queries"
+    },
+    {
+      "file": "requirements.txt",
+      "description": "Project dependencies"
+    },
+    {
+      "file": "README.md",
+      "description": "Project documentation"
+    },
+    {
+      "file": ".env",
+      "description": "Environment variables for API keys",
+      "excluded": true
+    }
+  ]
+} 
