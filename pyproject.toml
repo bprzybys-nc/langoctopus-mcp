@@ -5,6 +5,7 @@ description = "LangOctopus MCP Project - LangGraph agent with retro UI"
 authors = ["Your Name <you@example.com>"]
 license = "Apache-2.0"
 readme = "README.md"
+packages = [{ include = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"

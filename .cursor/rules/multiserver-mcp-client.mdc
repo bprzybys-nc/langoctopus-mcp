@@ -1,0 +1,62 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# MultiServerMCPClient Usage Guide
+
+This rule describes how to correctly initialize and use the `MultiServerMCPClient` from the `langchain-mcp-adapters` library.
+
+## Initialization
+
+The client is initialized by passing a dictionary containing the configurations for each MCP server you want to connect to. The keys of the dictionary are logical names you choose for the servers (used later by the agent/tools), and the values are dictionaries specifying how to connect.
+
+**Correct Signature:**
+
+```python
+from langchain_mcp_adapters.client import MultiServerMCPClient
+
+server_configs = {
+    "logical_server_name_1": {
+        # Config for server 1 (e.g., stdio)
+        "command": "python",
+        "args": ["path/to/server1.py"],
+        "transport": "stdio"
+    },
+    "logical_server_name_2": {
+        # Config for server 2 (e.g., sse)
+        "url": "http://localhost:8000/sse", 
+        "transport": "sse"
+    }
+    # ... add more servers as needed
+}
+
+client = MultiServerMCPClient(server_configs)
+```
+
+**Important:**
+
+*   Do **NOT** pass arguments like `client_id` or `logger` to the `__init__` method. They are not valid parameters and will cause a `TypeError`.
+*   The specific configuration details (`command`, `args`, `url`, `transport`) depend on how each individual MCP server is run.
+
+## Usage
+
+The client is designed to be used as an asynchronous context manager:
+
+```python
+async with MultiServerMCPClient(server_configs) as client:
+    if client.is_connected():
+        # Get tools discovered from all connected servers
+        tools = client.get_tools()
+        
+        # Use the tools with a Langchain agent
+        # agent = create_react_agent(model, tools)
+        # ... invoke agent ...
+    else:
+        print("Failed to connect to MCP servers.")
+```
+
+- The context manager handles connecting to the servers upon entry and disconnecting upon exit.
+- Use `client.is_connected()` to verify the connection.
+- Use `client.get_tools()` to retrieve a list of Langchain-compatible tools automatically discovered from the connected MCP servers.
+

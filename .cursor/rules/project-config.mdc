@@ -1,0 +1,21 @@
+# Project Configuration & Testing Notes
+
+## Poetry Package Configuration
+
+For imports from the `src` directory (e.g., `from src.agent import ...`) to work correctly when using `poetry run`, the `pyproject.toml` file must be configured to recognize `src` as a package source directory. This is done via:
+
+```toml
+[tool.poetry]
+# ... other settings ...
+packages = [{ include = "src" }]
+```
+
+After configuring `pyproject.toml`, run `poetry install` to ensure the project is installed correctly in the virtual environment.
+
+## E2E Test Model
+
+The end-to-end tests in `[tests/test_e2e_agent.py](mdc:tests/test_e2e_agent.py)` are configured to use the following Google Generative AI model:
+
+*   **Model Name:** `gemini-2.5-flash-preview-04-17`
+
+Ensure this model is available and accessible via the provided `GOOGLE_API_KEY` for the tests to run successfully.
